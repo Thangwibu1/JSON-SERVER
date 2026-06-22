@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(powershell -Command \"\\(Get-Content 'd:\\\\code\\\\FSA_BE\\\\MovieTheaterServer\\\\db.json' -Raw\\) -replace '\\\\\"passwordHash\\\\\":\\\\s*\\\\\"\\\\$2b\\\\\\\\\\\\$[^\\\\\"]*\\\\\"', '\\\\\"passwordHash\\\\\": \\\\\"example123\\\\\"' | Set-Content 'd:\\\\code\\\\FSA_BE\\\\MovieTheaterServer\\\\db.json' -Encoding UTF8\")",
+      "Bash(powershell.exe -Command \"\\(Get-Content 'd:\\\\\\\\code\\\\\\\\FSA_BE\\\\\\\\MovieTheaterServer\\\\\\\\db.json' -Raw\\) -replace '\\\\\"passwordHash\\\\\": \\\\\"[^\\\\\"]+\\\\\"', '\\\\\"passwordHash\\\\\": \\\\\"example123\\\\\"' | Set-Content 'd:\\\\\\\\code\\\\\\\\FSA_BE\\\\\\\\MovieTheaterServer\\\\\\\\db.json' -Encoding UTF8\")"
+    ]
+  }
+}
