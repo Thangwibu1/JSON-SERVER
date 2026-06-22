@@ -1,0 +1,1472 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Movie Theater Server API",
+    "description": "Mock API for Movie Theater Management System powered by JSON Server.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": "Local mock server"
+    }
+  ],
+  "tags": [
+    { "name": "Account", "description": "Manage user accounts" },
+    { "name": "Member Profile", "description": "Manage member tiers and preferences" },
+    { "name": "Cinema Room", "description": "Manage auditorium/hall rooms" },
+    { "name": "Seat", "description": "Manage auditorium seats configuration" },
+    { "name": "Movie", "description": "Manage film listings" },
+    { "name": "Showtime", "description": "Manage movie screening showtimes" },
+    { "name": "Showtime Seat", "description": "Manage seat status for specific showtimes" },
+    { "name": "Promotion", "description": "Manage discount codes and vouchers" },
+    { "name": "Booking", "description": "Manage ticket booking transactions" },
+    { "name": "Booking Seat", "description": "Manage seats assigned to bookings" },
+    { "name": "Ticket", "description": "Manage issued entrance tickets" }
+  ],
+  "paths": {
+    "/ACCOUNT": {
+      "get": {
+        "tags": ["Account"],
+        "summary": "Get all accounts",
+        "parameters": [
+          { "name": "role", "in": "query", "schema": { "type": "string" }, "description": "Filter by role (e.g. ADMIN, MEMBER, EMPLOYEE)" },
+          { "name": "status", "in": "query", "schema": { "type": "string" }, "description": "Filter by status (e.g. ACTIVE, BLOCKED)" }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/Account" }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["Account"],
+        "summary": "Create an account",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/AccountInput" }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Account" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ACCOUNT/{id}": {
+      "get": {
+        "tags": ["Account"],
+        "summary": "Get account by ID",
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Account" }
+              }
+            }
+          },
+          "404": { "description": "Not Found" }
+        }
+      },
+      "put": {
+        "tags": ["Account"],
+        "summary": "Replace account by ID",
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/AccountInput" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Updated",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Account" }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": ["Account"],
+        "summary": "Partially update account by ID",
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "fullName": { "type": "string" },
+                  "email": { "type": "string" },
+                  "phoneNumber": { "type": "string" },
+                  "status": { "type": "string" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Updated",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Account" }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Account"],
+        "summary": "Delete account by ID",
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "Deleted successfully" }
+        }
+      }
+    },
+    "/MEMBER_PROFILE": {
+      "get": {
+        "tags": ["Member Profile"],
+        "summary": "Get all member profiles",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/MemberProfile" }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["Member Profile"],
+        "summary": "Create a member profile",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/MemberProfileInput" }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/MemberProfile" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/MEMBER_PROFILE/{id}": {
+      "get": {
+        "tags": ["Member Profile"],
+        "summary": "Get member profile by ID",
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/MemberProfile" }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": ["Member Profile"],
+        "summary": "Replace member profile",
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/MemberProfileInput" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Updated",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/MemberProfile" }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Member Profile"],
+        "summary": "Delete member profile",
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "Deleted" }
+        }
+      }
+    },
+    "/CINEMA_ROOM": {
+      "get": {
+        "tags": ["Cinema Room"],
+        "summary": "Get all cinema rooms",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/CinemaRoom" }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["Cinema Room"],
+        "summary": "Create a cinema room",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CinemaRoomInput" }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/CinemaRoom" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/CINEMA_ROOM/{id}": {
+      "get": {
+        "tags": ["Cinema Room"],
+        "summary": "Get cinema room by ID",
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/CinemaRoom" }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": ["Cinema Room"],
+        "summary": "Replace cinema room",
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CinemaRoomInput" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Updated",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/CinemaRoom" }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Cinema Room"],
+        "summary": "Delete cinema room",
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "Deleted" }
+        }
+      }
+    },
+    "/SEAT": {
+      "get": {
+        "tags": ["Seat"],
+        "summary": "Get all seats",
+        "parameters": [
+          { "name": "roomId", "in": "query", "schema": { "type": "string" }, "description": "Filter seats by room ID" }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/Seat" }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["Seat"],
+        "summary": "Create a seat",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/SeatInput" }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Seat" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/SEAT/{id}": {
+      "get": {
+        "tags": ["Seat"],
+        "summary": "Get seat by ID",
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Seat" }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": ["Seat"],
+        "summary": "Replace seat",
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/SeatInput" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Updated",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Seat" }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Seat"],
+        "summary": "Delete seat",
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "Deleted" }
+        }
+      }
+    },
+    "/MOVIE": {
+      "get": {
+        "tags": ["Movie"],
+        "summary": "Get all movies",
+        "parameters": [
+          { "name": "status", "in": "query", "schema": { "type": "string" }, "description": "Filter by movie status (e.g. ENDED, SHOWING)" }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/Movie" }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["Movie"],
+        "summary": "Create a movie listing",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/MovieInput" }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Movie" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/MOVIE/{id}": {
+      "get": {
+        "tags": ["Movie"],
+        "summary": "Get movie by ID",
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Movie" }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": ["Movie"],
+        "summary": "Replace movie",
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/MovieInput" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Updated",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Movie" }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Movie"],
+        "summary": "Delete movie",
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "Deleted" }
+        }
+      }
+    },
+    "/SHOWTIME": {
+      "get": {
+        "tags": ["Showtime"],
+        "summary": "Get all showtimes",
+        "parameters": [
+          { "name": "movieId", "in": "query", "schema": { "type": "string" } },
+          { "name": "roomId", "in": "query", "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/Showtime" }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["Showtime"],
+        "summary": "Create a showtime screening",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/ShowtimeInput" }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Showtime" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/SHOWTIME/{id}": {
+      "get": {
+        "tags": ["Showtime"],
+        "summary": "Get showtime by ID",
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Showtime" }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": ["Showtime"],
+        "summary": "Replace showtime",
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/ShowtimeInput" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Updated",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Showtime" }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Showtime"],
+        "summary": "Delete showtime",
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "Deleted" }
+        }
+      }
+    },
+    "/SHOWTIME_SEAT": {
+      "get": {
+        "tags": ["Showtime Seat"],
+        "summary": "Get all showtime seat statuses",
+        "parameters": [
+          { "name": "showtimeId", "in": "query", "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/ShowtimeSeat" }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["Showtime Seat"],
+        "summary": "Create showtime seat status",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/ShowtimeSeatInput" }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ShowtimeSeat" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/SHOWTIME_SEAT/{id}": {
+      "get": {
+        "tags": ["Showtime Seat"],
+        "summary": "Get showtime seat status by ID",
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ShowtimeSeat" }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": ["Showtime Seat"],
+        "summary": "Replace showtime seat status",
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/ShowtimeSeatInput" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Updated",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ShowtimeSeat" }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Showtime Seat"],
+        "summary": "Delete showtime seat status",
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "Deleted" }
+        }
+      }
+    },
+    "/PROMOTION": {
+      "get": {
+        "tags": ["Promotion"],
+        "summary": "Get all promotions",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/Promotion" }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["Promotion"],
+        "summary": "Create a promotion",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/PromotionInput" }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Promotion" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/PROMOTION/{id}": {
+      "get": {
+        "tags": ["Promotion"],
+        "summary": "Get promotion by ID",
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Promotion" }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": ["Promotion"],
+        "summary": "Replace promotion",
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/PromotionInput" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Updated",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Promotion" }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Promotion"],
+        "summary": "Delete promotion",
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "Deleted" }
+        }
+      }
+    },
+    "/BOOKING": {
+      "get": {
+        "tags": ["Booking"],
+        "summary": "Get all bookings",
+        "parameters": [
+          { "name": "accountId", "in": "query", "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/Booking" }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["Booking"],
+        "summary": "Create a booking transaction",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/BookingInput" }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Booking" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/BOOKING/{id}": {
+      "get": {
+        "tags": ["Booking"],
+        "summary": "Get booking by ID",
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Booking" }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": ["Booking"],
+        "summary": "Replace booking",
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/BookingInput" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Updated",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Booking" }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Booking"],
+        "summary": "Delete booking",
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "Deleted" }
+        }
+      }
+    },
+    "/BOOKING_SEAT": {
+      "get": {
+        "tags": ["Booking Seat"],
+        "summary": "Get all booking seats detail",
+        "parameters": [
+          { "name": "bookingId", "in": "query", "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/BookingSeat" }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["Booking Seat"],
+        "summary": "Assign seat to booking",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/BookingSeatInput" }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/BookingSeat" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/BOOKING_SEAT/{id}": {
+      "get": {
+        "tags": ["Booking Seat"],
+        "summary": "Get booking seat by ID",
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/BookingSeat" }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": ["Booking Seat"],
+        "summary": "Replace booking seat detail",
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/BookingSeatInput" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Updated",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/BookingSeat" }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Booking Seat"],
+        "summary": "Delete booking seat detail",
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "Deleted" }
+        }
+      }
+    },
+    "/TICKET": {
+      "get": {
+        "tags": ["Ticket"],
+        "summary": "Get all tickets",
+        "parameters": [
+          { "name": "bookingId", "in": "query", "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/Ticket" }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["Ticket"],
+        "summary": "Issue a ticket",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/TicketInput" }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Ticket" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/TICKET/{id}": {
+      "get": {
+        "tags": ["Ticket"],
+        "summary": "Get ticket by ID",
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Ticket" }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": ["Ticket"],
+        "summary": "Replace ticket details",
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/TicketInput" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Updated",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Ticket" }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Ticket"],
+        "summary": "Delete ticket",
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "Deleted" }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Account": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string", "example": "acc_001" },
+          "accountId": { "type": "string", "example": "acc_001" },
+          "username": { "type": "string", "example": "admin_huy" },
+          "passwordHash": { "type": "string", "example": "example123" },
+          "fullName": { "type": "string", "example": "Nguyễn Đức Huy" },
+          "email": { "type": "string", "example": "huy.nd@movietheater.com" },
+          "phoneNumber": { "type": "string", "example": "0901234567" },
+          "dateOfBirth": { "type": "string", "format": "date", "example": "1990-05-12" },
+          "gender": { "type": "string", "example": "MALE" },
+          "identityCard": { "type": "string", "example": "001090123456" },
+          "address": { "type": "string", "example": "123 Lê Lợi, Quận 1, TP. Hồ Chí Minh" },
+          "avatarUrl": { "type": "string", "example": "https://i.pravatar.cc/150?img=33" },
+          "role": { "type": "string", "example": "ADMIN" },
+          "status": { "type": "string", "example": "ACTIVE" },
+          "createdAt": { "type": "string", "format": "date-time", "example": "2026-01-01T08:00:00Z" },
+          "updatedAt": { "type": "string", "format": "date-time", "example": "2026-06-15T10:30:00Z" },
+          "lastLoginAt": { "type": "string", "format": "date-time", "example": "2026-06-18T09:00:00Z" }
+        }
+      },
+      "AccountInput": {
+        "type": "object",
+        "required": ["accountId", "username", "passwordHash", "fullName", "email", "phoneNumber", "role", "status"],
+        "properties": {
+          "accountId": { "type": "string", "example": "acc_001" },
+          "username": { "type": "string", "example": "admin_huy" },
+          "passwordHash": { "type": "string", "example": "example123" },
+          "fullName": { "type": "string", "example": "Nguyễn Đức Huy" },
+          "email": { "type": "string", "example": "huy.nd@movietheater.com" },
+          "phoneNumber": { "type": "string", "example": "0901234567" },
+          "dateOfBirth": { "type": "string", "format": "date", "example": "1990-05-12" },
+          "gender": { "type": "string", "example": "MALE" },
+          "identityCard": { "type": "string", "example": "001090123456" },
+          "address": { "type": "string", "example": "123 Lê Lợi, Quận 1, TP. Hồ Chí Minh" },
+          "avatarUrl": { "type": "string", "example": "https://i.pravatar.cc/150?img=33" },
+          "role": { "type": "string", "example": "ADMIN" },
+          "status": { "type": "string", "example": "ACTIVE" }
+        }
+      },
+      "MemberProfile": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string", "example": "mem_prof_001" },
+          "memberId": { "type": "string", "example": "mem_prof_001" },
+          "accountId": { "type": "string", "example": "acc_006" },
+          "points": { "type": "integer", "example": 450 },
+          "tier": { "type": "string", "example": "SILVER" },
+          "favoriteGenres": { "type": "array", "items": { "type": "string" }, "example": ["ACTION", "SCI_FI"] },
+          "joinedAt": { "type": "string", "format": "date-time", "example": "2026-02-01T14:25:00Z" }
+        }
+      },
+      "MemberProfileInput": {
+        "type": "object",
+        "required": ["memberId", "accountId", "points", "tier"],
+        "properties": {
+          "memberId": { "type": "string", "example": "mem_prof_001" },
+          "accountId": { "type": "string", "example": "acc_006" },
+          "points": { "type": "integer", "example": 450 },
+          "tier": { "type": "string", "example": "SILVER" },
+          "favoriteGenres": { "type": "array", "items": { "type": "string" }, "example": ["ACTION", "SCI_FI"] }
+        }
+      },
+      "CinemaRoom": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string", "example": "room_001" },
+          "roomId": { "type": "string", "example": "room_001" },
+          "roomName": { "type": "string", "example": "Cinema Room 1" },
+          "screenType": { "type": "string", "example": "2D" },
+          "capacity": { "type": "integer", "example": 120 },
+          "status": { "type": "string", "example": "ACTIVE" }
+        }
+      },
+      "CinemaRoomInput": {
+        "type": "object",
+        "required": ["roomId", "roomName", "screenType", "capacity", "status"],
+        "properties": {
+          "roomId": { "type": "string", "example": "room_001" },
+          "roomName": { "type": "string", "example": "Cinema Room 1" },
+          "screenType": { "type": "string", "example": "2D" },
+          "capacity": { "type": "integer", "example": 120 },
+          "status": { "type": "string", "example": "ACTIVE" }
+        }
+      },
+      "Seat": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string", "example": "seat_001" },
+          "seatId": { "type": "string", "example": "seat_001" },
+          "roomId": { "type": "string", "example": "room_001" },
+          "seatRow": { "type": "string", "example": "A" },
+          "seatNumber": { "type": "integer", "example": 1 },
+          "seatType": { "type": "string", "example": "STANDARD" },
+          "status": { "type": "string", "example": "ACTIVE" }
+        }
+      },
+      "SeatInput": {
+        "type": "object",
+        "required": ["seatId", "roomId", "seatRow", "seatNumber", "seatType", "status"],
+        "properties": {
+          "seatId": { "type": "string", "example": "seat_001" },
+          "roomId": { "type": "string", "example": "room_001" },
+          "seatRow": { "type": "string", "example": "A" },
+          "seatNumber": { "type": "integer", "example": 1 },
+          "seatType": { "type": "string", "example": "STANDARD" },
+          "status": { "type": "string", "example": "ACTIVE" }
+        }
+      },
+      "Movie": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string", "example": "mov_001" },
+          "movieId": { "type": "string", "example": "mov_001" },
+          "title": { "type": "string", "example": "Interstellar" },
+          "originalTitle": { "type": "string", "example": "Interstellar" },
+          "description": { "type": "string", "example": "A team of explorers travel through a wormhole..." },
+          "durationMin": { "type": "integer", "example": 169 },
+          "director": { "type": "string", "example": "Christopher Nolan" },
+          "actors": { "type": "array", "items": { "type": "string" }, "example": ["Matthew McConaughey", "Anne Hathaway"] },
+          "genres": { "type": "array", "items": { "type": "string" }, "example": ["Sci-Fi", "Drama"] },
+          "productionCompany": { "type": "string", "example": "Paramount Pictures" },
+          "releaseDate": { "type": "string", "format": "date", "example": "2014-11-07" },
+          "language": { "type": "string", "example": "English" },
+          "subtitle": { "type": "string", "example": "Vietnamese" },
+          "ageRating": { "type": "string", "example": "C13" },
+          "posterUrl": { "type": "string", "example": "https://example.com/poster.jpg" },
+          "bannerUrl": { "type": "string", "example": "https://example.com/banner.jpg" },
+          "trailerUrl": { "type": "string", "example": "https://example.com/trailer" },
+          "status": { "type": "string", "example": "ENDED" }
+        }
+      },
+      "MovieInput": {
+        "type": "object",
+        "required": ["movieId", "title", "durationMin", "releaseDate", "status"],
+        "properties": {
+          "movieId": { "type": "string", "example": "mov_001" },
+          "title": { "type": "string", "example": "Interstellar" },
+          "originalTitle": { "type": "string", "example": "Interstellar" },
+          "description": { "type": "string", "example": "A team of explorers travel through a wormhole..." },
+          "durationMin": { "type": "integer", "example": 169 },
+          "director": { "type": "string", "example": "Christopher Nolan" },
+          "actors": { "type": "array", "items": { "type": "string" }, "example": ["Matthew McConaughey", "Anne Hathaway"] },
+          "genres": { "type": "array", "items": { "type": "string" }, "example": ["Sci-Fi", "Drama"] },
+          "productionCompany": { "type": "string", "example": "Paramount Pictures" },
+          "releaseDate": { "type": "string", "format": "date", "example": "2014-11-07" },
+          "language": { "type": "string", "example": "English" },
+          "subtitle": { "type": "string", "example": "Vietnamese" },
+          "ageRating": { "type": "string", "example": "C13" },
+          "posterUrl": { "type": "string", "example": "https://example.com/poster.jpg" },
+          "bannerUrl": { "type": "string", "example": "https://example.com/banner.jpg" },
+          "trailerUrl": { "type": "string", "example": "https://example.com/trailer" },
+          "status": { "type": "string", "example": "ENDED" }
+        }
+      },
+      "Showtime": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string", "example": "show_001" },
+          "showtimeId": { "type": "string", "example": "show_001" },
+          "movieId": { "type": "string", "example": "mov_009" },
+          "roomId": { "type": "string", "example": "room_001" },
+          "startAt": { "type": "string", "format": "date-time", "example": "2026-06-18T14:00:00Z" },
+          "endAt": { "type": "string", "format": "date-time", "example": "2026-06-18T17:01:00Z" },
+          "basePrice": { "type": "number", "example": 90000 },
+          "format": { "type": "string", "example": "2D Subtitled" },
+          "status": { "type": "string", "example": "OPEN" }
+        }
+      },
+      "ShowtimeInput": {
+        "type": "object",
+        "required": ["showtimeId", "movieId", "roomId", "startAt", "endAt", "basePrice", "status"],
+        "properties": {
+          "showtimeId": { "type": "string", "example": "show_001" },
+          "movieId": { "type": "string", "example": "mov_009" },
+          "roomId": { "type": "string", "example": "room_001" },
+          "startAt": { "type": "string", "format": "date-time", "example": "2026-06-18T14:00:00Z" },
+          "endAt": { "type": "string", "format": "date-time", "example": "2026-06-18T17:01:00Z" },
+          "basePrice": { "type": "number", "example": 90000 },
+          "format": { "type": "string", "example": "2D Subtitled" },
+          "status": { "type": "string", "example": "OPEN" }
+        }
+      },
+      "ShowtimeSeat": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string", "example": "sh_st_001" },
+          "showtimeSeatId": { "type": "string", "example": "sh_st_001" },
+          "showtimeId": { "type": "string", "example": "show_001" },
+          "seatId": { "type": "string", "example": "seat_001" },
+          "seatType": { "type": "string", "example": "STANDARD" },
+          "status": { "type": "string", "example": "BOOKED" },
+          "price": { "type": "number", "example": 90000 }
+        }
+      },
+      "ShowtimeSeatInput": {
+        "type": "object",
+        "required": ["showtimeSeatId", "showtimeId", "seatId", "seatType", "status", "price"],
+        "properties": {
+          "showtimeSeatId": { "type": "string", "example": "sh_st_001" },
+          "showtimeId": { "type": "string", "example": "show_001" },
+          "seatId": { "type": "string", "example": "seat_001" },
+          "seatType": { "type": "string", "example": "STANDARD" },
+          "status": { "type": "string", "example": "BOOKED" },
+          "price": { "type": "number", "example": 90000 }
+        }
+      },
+      "Promotion": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string", "example": "promo_001" },
+          "promotionId": { "type": "string", "example": "promo_001" },
+          "code": { "type": "string", "example": "BANMOI2026" },
+          "title": { "type": "string", "example": "Chào Bạn Mới" },
+          "description": { "type": "string", "example": "Giảm ngay 20.000đ..." },
+          "discountType": { "type": "string", "example": "FIXED_AMOUNT" },
+          "discountValue": { "type": "number", "example": 20000 },
+          "maxDiscountAmount": { "type": "number", "example": 20000 },
+          "minOrderAmount": { "type": "number", "example": 80000 },
+          "startAt": { "type": "string", "format": "date-time", "example": "2026-01-01T00:00:00Z" },
+          "endAt": { "type": "string", "format": "date-time", "example": "2026-12-31T23:59:59Z" },
+          "status": { "type": "string", "example": "ACTIVE" },
+          "imageUrl": { "type": "string", "example": "https://example.com/promo.jpg" }
+        }
+      },
+      "PromotionInput": {
+        "type": "object",
+        "required": ["promotionId", "code", "title", "discountType", "discountValue", "status"],
+        "properties": {
+          "promotionId": { "type": "string", "example": "promo_001" },
+          "code": { "type": "string", "example": "BANMOI2026" },
+          "title": { "type": "string", "example": "Chào Bạn Mới" },
+          "description": { "type": "string", "example": "Giảm ngay 20.000đ..." },
+          "discountType": { "type": "string", "example": "FIXED_AMOUNT" },
+          "discountValue": { "type": "number", "example": 20000 },
+          "maxDiscountAmount": { "type": "number", "example": 20000 },
+          "minOrderAmount": { "type": "number", "example": 80000 },
+          "startAt": { "type": "string", "format": "date-time", "example": "2026-01-01T00:00:00Z" },
+          "endAt": { "type": "string", "format": "date-time", "example": "2026-12-31T23:59:59Z" },
+          "status": { "type": "string", "example": "ACTIVE" },
+          "imageUrl": { "type": "string", "example": "https://example.com/promo.jpg" }
+        }
+      },
+      "Booking": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string", "example": "bk_001" },
+          "bookingId": { "type": "string", "example": "bk_001" },
+          "bookingCode": { "type": "string", "example": "MTX26061801" },
+          "accountId": { "type": "string", "example": "acc_006" },
+          "showtimeId": { "type": "string", "example": "show_001" },
+          "promotionId": { "type": "string", "nullable": true, "example": "promo_004" },
+          "bookedByEmployeeId": { "type": "string", "nullable": true, "example": null },
+          "subtotalAmount": { "type": "number", "example": 180000 },
+          "discountAmount": { "type": "number", "example": 30000 },
+          "pointsUsed": { "type": "integer", "example": 0 },
+          "pointsEarned": { "type": "integer", "example": 15 },
+          "totalAmount": { "type": "number", "example": 150000 },
+          "paymentMethod": { "type": "string", "example": "EWALLET" },
+          "paymentStatus": { "type": "string", "example": "PAID" },
+          "bookingStatus": { "type": "string", "example": "CONFIRMED" },
+          "createdAt": { "type": "string", "format": "date-time", "example": "2026-06-18T10:15:00Z" },
+          "updatedAt": { "type": "string", "format": "date-time", "example": "2026-06-18T10:17:22Z" }
+        }
+      },
+      "BookingInput": {
+        "type": "object",
+        "required": ["bookingId", "bookingCode", "accountId", "showtimeId", "totalAmount", "bookingStatus"],
+        "properties": {
+          "bookingId": { "type": "string", "example": "bk_001" },
+          "bookingCode": { "type": "string", "example": "MTX26061801" },
+          "accountId": { "type": "string", "example": "acc_006" },
+          "showtimeId": { "type": "string", "example": "show_001" },
+          "promotionId": { "type": "string", "nullable": true, "example": "promo_004" },
+          "bookedByEmployeeId": { "type": "string", "nullable": true, "example": null },
+          "subtotalAmount": { "type": "number", "example": 180000 },
+          "discountAmount": { "type": "number", "example": 30000 },
+          "pointsUsed": { "type": "integer", "example": 0 },
+          "pointsEarned": { "type": "integer", "example": 15 },
+          "totalAmount": { "type": "number", "example": 150000 },
+          "paymentMethod": { "type": "string", "example": "EWALLET" },
+          "paymentStatus": { "type": "string", "example": "PAID" },
+          "bookingStatus": { "type": "string", "example": "CONFIRMED" }
+        }
+      },
+      "BookingSeat": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string", "example": "bk_st_001" },
+          "bookingSeatId": { "type": "string", "example": "bk_st_001" },
+          "bookingId": { "type": "string", "example": "bk_001" },
+          "showtimeSeatId": { "type": "string", "example": "sh_st_001" },
+          "price": { "type": "number", "example": 90000 }
+        }
+      },
+      "BookingSeatInput": {
+        "type": "object",
+        "required": ["bookingSeatId", "bookingId", "showtimeSeatId", "price"],
+        "properties": {
+          "bookingSeatId": { "type": "string", "example": "bk_st_001" },
+          "bookingId": { "type": "string", "example": "bk_001" },
+          "showtimeSeatId": { "type": "string", "example": "sh_st_001" },
+          "price": { "type": "number", "example": 90000 }
+        }
+      },
+      "Ticket": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string", "example": "tk_001" },
+          "ticketId": { "type": "string", "example": "tk_001" },
+          "bookingId": { "type": "string", "example": "bk_001" },
+          "bookingSeatId": { "type": "string", "example": "bk_st_001" },
+          "ticketCode": { "type": "string", "example": "QR-TIC-991201" },
+          "issuedAt": { "type": "string", "format": "date-time", "example": "2026-06-18T10:17:22Z" },
+          "isUsed": { "type": "boolean", "example": false },
+          "usedAt": { "type": "string", "format": "date-time", "nullable": true, "example": null },
+          "checkedInByEmployeeId": { "type": "string", "nullable": true, "example": null }
+        }
+      },
+      "TicketInput": {
+        "type": "object",
+        "required": ["ticketId", "bookingId", "bookingSeatId", "ticketCode", "issuedAt", "isUsed"],
+        "properties": {
+          "ticketId": { "type": "string", "example": "tk_001" },
+          "bookingId": { "type": "string", "example": "bk_001" },
+          "bookingSeatId": { "type": "string", "example": "bk_st_001" },
+          "ticketCode": { "type": "string", "example": "QR-TIC-991201" },
+          "issuedAt": { "type": "string", "format": "date-time", "example": "2026-06-18T10:17:22Z" },
+          "isUsed": { "type": "boolean", "example": false },
+          "usedAt": { "type": "string", "format": "date-time", "nullable": true, "example": null },
+          "checkedInByEmployeeId": { "type": "string", "nullable": true, "example": null }
+        }
+      }
+    }
+  }
+}

@@ -1,4 +1,4 @@
-﻿{
+{
   "ACCOUNT": [
     {
       "accountId": "acc_001",
@@ -16,7 +16,8 @@
       "status": "ACTIVE",
       "createdAt": "2026-01-01T08:00:00Z",
       "updatedAt": "2026-06-15T10:30:00Z",
-      "lastLoginAt": "2026-06-18T09:00:00Z"
+      "lastLoginAt": "2026-06-18T09:00:00Z",
+      "id": "acc_001"
     },
     {
       "accountId": "acc_002",
@@ -34,7 +35,8 @@
       "status": "ACTIVE",
       "createdAt": "2026-01-01T08:15:00Z",
       "updatedAt": "2026-06-10T14:20:00Z",
-      "lastLoginAt": "2026-06-17T18:45:00Z"
+      "lastLoginAt": "2026-06-17T18:45:00Z",
+      "id": "acc_002"
     },
     {
       "accountId": "acc_003",
@@ -52,7 +54,8 @@
       "status": "ACTIVE",
       "createdAt": "2026-01-10T09:00:00Z",
       "updatedAt": "2026-01-10T09:00:00Z",
-      "lastLoginAt": "2026-06-18T07:30:00Z"
+      "lastLoginAt": "2026-06-18T07:30:00Z",
+      "id": "acc_003"
     },
     {
       "accountId": "acc_004",
@@ -70,7 +73,8 @@
       "status": "ACTIVE",
       "createdAt": "2026-01-12T10:00:00Z",
       "updatedAt": "2026-05-01T11:15:00Z",
-      "lastLoginAt": "2026-06-18T08:00:00Z"
+      "lastLoginAt": "2026-06-18T08:00:00Z",
+      "id": "acc_004"
     },
     {
       "accountId": "acc_005",
@@ -88,7 +92,8 @@
       "status": "ACTIVE",
       "createdAt": "2026-06-18T02:14:00Z",
       "updatedAt": "2026-06-18T02:14:00Z",
-      "lastLoginAt": "2026-06-18T02:14:00Z"
+      "lastLoginAt": "2026-06-18T02:14:00Z",
+      "id": "acc_005"
     },
     {
       "accountId": "acc_006",
@@ -106,7 +111,8 @@
       "status": "ACTIVE",
       "createdAt": "2026-02-01T14:25:00Z",
       "updatedAt": "2026-02-01T14:25:00Z",
-      "lastLoginAt": "2026-06-15T21:00:00Z"
+      "lastLoginAt": "2026-06-15T21:00:00Z",
+      "id": "acc_006"
     },
     {
       "accountId": "acc_007",
@@ -124,7 +130,8 @@
       "status": "ACTIVE",
       "createdAt": "2026-02-03T11:40:00Z",
       "updatedAt": "2026-02-03T11:40:00Z",
-      "lastLoginAt": "2026-06-17T19:30:00Z"
+      "lastLoginAt": "2026-06-17T19:30:00Z",
+      "id": "acc_007"
     },
     {
       "accountId": "acc_008",
@@ -142,7 +149,8 @@
       "status": "ACTIVE",
       "createdAt": "2026-02-10T16:10:00Z",
       "updatedAt": "2026-04-12T09:22:00Z",
-      "lastLoginAt": "2026-06-16T13:15:00Z"
+      "lastLoginAt": "2026-06-16T13:15:00Z",
+      "id": "acc_008"
     },
     {
       "accountId": "acc_009",
@@ -160,7 +168,8 @@
       "status": "ACTIVE",
       "createdAt": "2026-02-15T08:35:00Z",
       "updatedAt": "2026-02-15T08:35:00Z",
-      "lastLoginAt": "2026-06-14T20:40:00Z"
+      "lastLoginAt": "2026-06-14T20:40:00Z",
+      "id": "acc_009"
     },
     {
       "accountId": "acc_010",
@@ -178,7 +187,8 @@
       "status": "ACTIVE",
       "createdAt": "2026-02-20T10:50:00Z",
       "updatedAt": "2026-02-20T10:50:00Z",
-      "lastLoginAt": "2026-06-11T15:20:00Z"
+      "lastLoginAt": "2026-06-11T15:20:00Z",
+      "id": "acc_010"
     },
     {
       "accountId": "acc_011",
@@ -196,7 +206,8 @@
       "status": "ACTIVE",
       "createdAt": "2026-02-25T13:15:00Z",
       "updatedAt": "2026-02-25T13:15:00Z",
-      "lastLoginAt": "2026-06-17T22:10:00Z"
+      "lastLoginAt": "2026-06-17T22:10:00Z",
+      "id": "acc_011"
     },
     {
       "accountId": "acc_012",
@@ -214,7 +225,8 @@
       "status": "ACTIVE",
       "createdAt": "2026-03-01T09:00:00Z",
       "updatedAt": "2026-03-01T09:00:00Z",
-      "lastLoginAt": "2026-06-15T17:45:00Z"
+      "lastLoginAt": "2026-06-15T17:45:00Z",
+      "id": "acc_012"
     },
     {
       "accountId": "acc_013",
@@ -232,7 +244,8 @@
       "status": "ACTIVE",
       "createdAt": "2026-03-05T15:30:00Z",
       "updatedAt": "2026-03-05T15:30:00Z",
-      "lastLoginAt": "2026-06-12T19:00:00Z"
+      "lastLoginAt": "2026-06-12T19:00:00Z",
+      "id": "acc_013"
     },
     {
       "accountId": "acc_014",
@@ -250,7 +263,8 @@
       "status": "ACTIVE",
       "createdAt": "2026-03-10T10:20:00Z",
       "updatedAt": "2026-03-10T10:20:00Z",
-      "lastLoginAt": "2026-06-18T01:10:00Z"
+      "lastLoginAt": "2026-06-18T01:10:00Z",
+      "id": "acc_014"
     },
     {
       "accountId": "acc_015",
@@ -268,7 +282,8 @@
       "status": "ACTIVE",
       "createdAt": "2026-03-12T14:40:00Z",
       "updatedAt": "2026-03-12T14:40:00Z",
-      "lastLoginAt": "2026-06-16T14:30:00Z"
+      "lastLoginAt": "2026-06-16T14:30:00Z",
+      "id": "acc_015"
     },
     {
       "accountId": "acc_016",
@@ -286,7 +301,8 @@
       "status": "ACTIVE",
       "createdAt": "2026-03-18T17:15:00Z",
       "updatedAt": "2026-03-18T17:15:00Z",
-      "lastLoginAt": "2026-06-14T11:20:00Z"
+      "lastLoginAt": "2026-06-14T11:20:00Z",
+      "id": "acc_016"
     },
     {
       "accountId": "acc_017",
@@ -304,7 +320,8 @@
       "status": "ACTIVE",
       "createdAt": "2026-03-22T11:00:00Z",
       "updatedAt": "2026-03-22T11:00:00Z",
-      "lastLoginAt": "2026-06-17T20:05:00Z"
+      "lastLoginAt": "2026-06-17T20:05:00Z",
+      "id": "acc_017"
     },
     {
       "accountId": "acc_018",
@@ -322,7 +339,8 @@
       "status": "BLOCKED",
       "createdAt": "2026-03-25T09:30:00Z",
       "updatedAt": "2026-06-01T10:00:00Z",
-      "lastLoginAt": "2026-05-28T16:40:00Z"
+      "lastLoginAt": "2026-05-28T16:40:00Z",
+      "id": "acc_018"
     },
     {
       "accountId": "acc_019",
@@ -340,7 +358,8 @@
       "status": "ACTIVE",
       "createdAt": "2026-03-29T14:10:00Z",
       "updatedAt": "2026-03-29T14:10:00Z",
-      "lastLoginAt": "2026-06-13T23:15:00Z"
+      "lastLoginAt": "2026-06-13T23:15:00Z",
+      "id": "acc_019"
     },
     {
       "accountId": "acc_020",
@@ -358,7 +377,8 @@
       "status": "ACTIVE",
       "createdAt": "2026-04-02T10:00:00Z",
       "updatedAt": "2026-04-02T10:00:00Z",
-      "lastLoginAt": "2026-06-15T14:20:00Z"
+      "lastLoginAt": "2026-06-15T14:20:00Z",
+      "id": "acc_020"
     },
     {
       "accountId": "acc_021",
@@ -376,7 +396,8 @@
       "status": "ACTIVE",
       "createdAt": "2026-04-05T16:25:00Z",
       "updatedAt": "2026-04-05T16:25:00Z",
-      "lastLoginAt": "2026-06-16T10:10:00Z"
+      "lastLoginAt": "2026-06-16T10:10:00Z",
+      "id": "acc_021"
     },
     {
       "accountId": "acc_022",
@@ -394,7 +415,8 @@
       "status": "ACTIVE",
       "createdAt": "2026-04-10T09:40:00Z",
       "updatedAt": "2026-04-10T09:40:00Z",
-      "lastLoginAt": "2026-06-17T21:35:00Z"
+      "lastLoginAt": "2026-06-17T21:35:00Z",
+      "id": "acc_022"
     },
     {
       "accountId": "acc_023",
@@ -412,7 +434,8 @@
       "status": "ACTIVE",
       "createdAt": "2026-04-15T11:15:00Z",
       "updatedAt": "2026-04-15T11:15:00Z",
-      "lastLoginAt": "2026-06-14T16:50:00Z"
+      "lastLoginAt": "2026-06-14T16:50:00Z",
+      "id": "acc_023"
     },
     {
       "accountId": "acc_024",
@@ -430,7 +453,8 @@
       "status": "ACTIVE",
       "createdAt": "2026-04-20T15:30:00Z",
       "updatedAt": "2026-04-20T15:30:00Z",
-      "lastLoginAt": "2026-06-18T00:45:00Z"
+      "lastLoginAt": "2026-06-18T00:45:00Z",
+      "id": "acc_024"
     },
     {
       "accountId": "acc_025",
@@ -448,7 +472,8 @@
       "status": "ACTIVE",
       "createdAt": "2026-04-25T10:00:00Z",
       "updatedAt": "2026-04-25T10:00:00Z",
-      "lastLoginAt": "2026-06-17T09:15:00Z"
+      "lastLoginAt": "2026-06-17T09:15:00Z",
+      "id": "acc_025"
     }
   ],
   "MEMBER_PROFILE": [
@@ -457,160 +482,239 @@
       "accountId": "acc_006",
       "points": 450,
       "tier": "SILVER",
-      "favoriteGenres": ["ACTION", "SCI_FI"],
-      "joinedAt": "2026-02-01T14:25:00Z"
+      "favoriteGenres": [
+        "ACTION",
+        "SCI_FI"
+      ],
+      "joinedAt": "2026-02-01T14:25:00Z",
+      "id": "mem_prof_001"
     },
     {
       "memberId": "mem_prof_002",
       "accountId": "acc_007",
       "points": 120,
       "tier": "STANDARD",
-      "favoriteGenres": ["ROMANCE", "COMEDY"],
-      "joinedAt": "2026-02-03T11:40:00Z"
+      "favoriteGenres": [
+        "ROMANCE",
+        "COMEDY"
+      ],
+      "joinedAt": "2026-02-03T11:40:00Z",
+      "id": "mem_prof_002"
     },
     {
       "memberId": "mem_prof_003",
       "accountId": "acc_008",
       "points": 1250,
       "tier": "GOLD",
-      "favoriteGenres": ["HORROR", "THRILLER"],
-      "joinedAt": "2026-02-10T16:10:00Z"
+      "favoriteGenres": [
+        "HORROR",
+        "THRILLER"
+      ],
+      "joinedAt": "2026-02-10T16:10:00Z",
+      "id": "mem_prof_003"
     },
     {
       "memberId": "mem_prof_004",
       "accountId": "acc_009",
       "points": 320,
       "tier": "STANDARD",
-      "favoriteGenres": ["DRAMA", "ROMANCE"],
-      "joinedAt": "2026-02-15T08:35:00Z"
+      "favoriteGenres": [
+        "DRAMA",
+        "ROMANCE"
+      ],
+      "joinedAt": "2026-02-15T08:35:00Z",
+      "id": "mem_prof_004"
     },
     {
       "memberId": "mem_prof_005",
       "accountId": "acc_010",
       "points": 680,
       "tier": "SILVER",
-      "favoriteGenres": ["ACTION", "ADVENTURE"],
-      "joinedAt": "2026-02-20T10:50:00Z"
+      "favoriteGenres": [
+        "ACTION",
+        "ADVENTURE"
+      ],
+      "joinedAt": "2026-02-20T10:50:00Z",
+      "id": "mem_prof_005"
     },
     {
       "memberId": "mem_prof_006",
       "accountId": "acc_011",
       "points": 950,
       "tier": "SILVER",
-      "favoriteGenres": ["FANTASY", "COMEDY"],
-      "joinedAt": "2026-02-25T13:15:00Z"
+      "favoriteGenres": [
+        "FANTASY",
+        "COMEDY"
+      ],
+      "joinedAt": "2026-02-25T13:15:00Z",
+      "id": "mem_prof_006"
     },
     {
       "memberId": "mem_prof_007",
       "accountId": "acc_012",
       "points": 2100,
       "tier": "GOLD",
-      "favoriteGenres": ["SCI_FI", "THRILLER"],
-      "joinedAt": "2026-03-01T09:00:00Z"
+      "favoriteGenres": [
+        "SCI_FI",
+        "THRILLER"
+      ],
+      "joinedAt": "2026-03-01T09:00:00Z",
+      "id": "mem_prof_007"
     },
     {
       "memberId": "mem_prof_008",
       "accountId": "acc_013",
       "points": 150,
       "tier": "STANDARD",
-      "favoriteGenres": ["ANIMATION", "FAMILY"],
-      "joinedAt": "2026-03-05T15:30:00Z"
+      "favoriteGenres": [
+        "ANIMATION",
+        "FAMILY"
+      ],
+      "joinedAt": "2026-03-05T15:30:00Z",
+      "id": "mem_prof_008"
     },
     {
       "memberId": "mem_prof_009",
       "accountId": "acc_014",
       "points": 50,
       "tier": "STANDARD",
-      "favoriteGenres": ["ROMANCE", "DRAMA"],
-      "joinedAt": "2026-03-10T10:20:00Z"
+      "favoriteGenres": [
+        "ROMANCE",
+        "DRAMA"
+      ],
+      "joinedAt": "2026-03-10T10:20:00Z",
+      "id": "mem_prof_009"
     },
     {
       "memberId": "mem_prof_010",
       "accountId": "acc_015",
       "points": 1800,
       "tier": "GOLD",
-      "favoriteGenres": ["CRIME", "ACTION"],
-      "joinedAt": "2026-03-12T14:40:00Z"
+      "favoriteGenres": [
+        "CRIME",
+        "ACTION"
+      ],
+      "joinedAt": "2026-03-12T14:40:00Z",
+      "id": "mem_prof_010"
     },
     {
       "memberId": "mem_prof_011",
       "accountId": "acc_016",
       "points": 420,
       "tier": "SILVER",
-      "favoriteGenres": ["HORROR", "MYSTERY"],
-      "joinedAt": "2026-03-18T17:15:00Z"
+      "favoriteGenres": [
+        "HORROR",
+        "MYSTERY"
+      ],
+      "joinedAt": "2026-03-18T17:15:00Z",
+      "id": "mem_prof_011"
     },
     {
       "memberId": "mem_prof_012",
       "accountId": "acc_017",
       "points": 890,
       "tier": "SILVER",
-      "favoriteGenres": ["SCI_FI", "ACTION"],
-      "joinedAt": "2026-03-22T11:00:00Z"
+      "favoriteGenres": [
+        "SCI_FI",
+        "ACTION"
+      ],
+      "joinedAt": "2026-03-22T11:00:00Z",
+      "id": "mem_prof_012"
     },
     {
       "memberId": "mem_prof_013",
       "accountId": "acc_018",
       "points": 0,
       "tier": "STANDARD",
-      "favoriteGenres": ["COMEDY"],
-      "joinedAt": "2026-03-25T09:30:00Z"
+      "favoriteGenres": [
+        "COMEDY"
+      ],
+      "joinedAt": "2026-03-25T09:30:00Z",
+      "id": "mem_prof_013"
     },
     {
       "memberId": "mem_prof_014",
       "accountId": "acc_019",
       "points": 310,
       "tier": "STANDARD",
-      "favoriteGenres": ["ACTION", "THRILLER"],
-      "joinedAt": "2026-03-29T14:10:00Z"
+      "favoriteGenres": [
+        "ACTION",
+        "THRILLER"
+      ],
+      "joinedAt": "2026-03-29T14:10:00Z",
+      "id": "mem_prof_014"
     },
     {
       "memberId": "mem_prof_015",
       "accountId": "acc_020",
       "points": 750,
       "tier": "SILVER",
-      "favoriteGenres": ["DRAMA", "MUSICAL"],
-      "joinedAt": "2026-04-02T10:00:00Z"
+      "favoriteGenres": [
+        "DRAMA",
+        "MUSICAL"
+      ],
+      "joinedAt": "2026-04-02T10:00:00Z",
+      "id": "mem_prof_015"
     },
     {
       "memberId": "mem_prof_016",
       "accountId": "acc_021",
       "points": 1400,
       "tier": "GOLD",
-      "favoriteGenres": ["DOCUMENTARY", "HISTORY"],
-      "joinedAt": "2026-04-05T16:25:00Z"
+      "favoriteGenres": [
+        "DOCUMENTARY",
+        "HISTORY"
+      ],
+      "joinedAt": "2026-04-05T16:25:00Z",
+      "id": "mem_prof_016"
     },
     {
       "memberId": "mem_prof_017",
       "accountId": "acc_022",
       "points": 90,
       "tier": "STANDARD",
-      "favoriteGenres": ["ANIMATION", "COMEDY"],
-      "joinedAt": "2026-04-10T09:40:00Z"
+      "favoriteGenres": [
+        "ANIMATION",
+        "COMEDY"
+      ],
+      "joinedAt": "2026-04-10T09:40:00Z",
+      "id": "mem_prof_017"
     },
     {
       "memberId": "mem_prof_018",
       "accountId": "acc_023",
       "points": 580,
       "tier": "SILVER",
-      "favoriteGenres": ["ACTION", "CRIME"],
-      "joinedAt": "2026-04-15T11:15:00Z"
+      "favoriteGenres": [
+        "ACTION",
+        "CRIME"
+      ],
+      "joinedAt": "2026-04-15T11:15:00Z",
+      "id": "mem_prof_018"
     },
     {
       "memberId": "mem_prof_019",
       "accountId": "acc_024",
       "points": 240,
       "tier": "STANDARD",
-      "favoriteGenres": ["ROMANCE", "FANTASY"],
-      "joinedAt": "2026-04-20T15:30:00Z"
+      "favoriteGenres": [
+        "ROMANCE",
+        "FANTASY"
+      ],
+      "joinedAt": "2026-04-20T15:30:00Z",
+      "id": "mem_prof_019"
     },
     {
       "memberId": "mem_prof_020",
       "accountId": "acc_025",
       "points": 1150,
       "tier": "GOLD",
-      "favoriteGenres": ["WAR", "DRAMA"],
-      "joinedAt": "2026-04-25T10:00:00Z"
+      "favoriteGenres": [
+        "WAR",
+        "DRAMA"
+      ],
+      "joinedAt": "2026-04-25T10:00:00Z",
+      "id": "mem_prof_020"
     }
   ],
   "CINEMA_ROOM": [
@@ -619,140 +723,160 @@
       "roomName": "Cinema Room 1",
       "screenType": "2D",
       "capacity": 120,
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "id": "room_001"
     },
     {
       "roomId": "room_002",
       "roomName": "Cinema Room 2",
       "screenType": "2D",
       "capacity": 120,
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "id": "room_002"
     },
     {
       "roomId": "room_003",
       "roomName": "Cinema Room 3",
       "screenType": "3D",
       "capacity": 100,
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "id": "room_003"
     },
     {
       "roomId": "room_004",
       "roomName": "IMAX Theater 1",
       "screenType": "IMAX",
       "capacity": 250,
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "id": "room_004"
     },
     {
       "roomId": "room_005",
       "roomName": "IMAX Theater 2",
       "screenType": "IMAX",
       "capacity": 250,
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "id": "room_005"
     },
     {
       "roomId": "room_006",
       "roomName": "4DX Experience",
       "screenType": "4DX",
       "capacity": 80,
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "id": "room_006"
     },
     {
       "roomId": "room_007",
       "roomName": "Gold Class Luxury",
       "screenType": "2D",
       "capacity": 40,
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "id": "room_007"
     },
     {
       "roomId": "room_008",
       "roomName": "Cinema Room 8",
       "screenType": "2D",
       "capacity": 150,
-      "status": "MAINTENANCE"
+      "status": "MAINTENANCE",
+      "id": "room_008"
     },
     {
       "roomId": "room_009",
       "roomName": "Cinema Room 9",
       "screenType": "2D",
       "capacity": 150,
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "id": "room_009"
     },
     {
       "roomId": "room_010",
       "roomName": "Cinema Room 10",
       "screenType": "3D",
       "capacity": 100,
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "id": "room_010"
     },
     {
       "roomId": "room_011",
       "roomName": "Cinema Room 11",
       "screenType": "2D",
       "capacity": 120,
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "id": "room_011"
     },
     {
       "roomId": "room_012",
       "roomName": "Cinema Room 12",
       "screenType": "2D",
       "capacity": 120,
-      "status": "INACTIVE"
+      "status": "INACTIVE",
+      "id": "room_012"
     },
     {
       "roomId": "room_013",
       "roomName": "Premium Room A",
       "screenType": "2D",
       "capacity": 60,
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "id": "room_013"
     },
     {
       "roomId": "room_014",
       "roomName": "Premium Room B",
       "screenType": "2D",
       "capacity": 60,
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "id": "room_014"
     },
     {
       "roomId": "room_015",
       "roomName": "Cinema Room 15",
       "screenType": "3D",
       "capacity": 110,
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "id": "room_015"
     },
     {
       "roomId": "room_016",
       "roomName": "ScreenX Center",
       "screenType": "SCREENX",
       "capacity": 180,
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "id": "room_016"
     },
     {
       "roomId": "room_017",
       "roomName": "Cinema Room 17",
       "screenType": "2D",
       "capacity": 140,
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "id": "room_017"
     },
     {
       "roomId": "room_018",
       "roomName": "Cinema Room 18",
       "screenType": "2D",
       "capacity": 140,
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "id": "room_018"
     },
     {
       "roomId": "room_019",
       "roomName": "Kids Cinema Room",
       "screenType": "2D",
       "capacity": 70,
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "id": "room_019"
     },
     {
       "roomId": "room_020",
       "roomName": "VIP Studio",
       "screenType": "IMAX",
       "capacity": 50,
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "id": "room_020"
     }
   ],
   "SEAT": [
@@ -762,7 +886,8 @@
       "seatRow": "A",
       "seatNumber": 1,
       "seatType": "STANDARD",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "id": "seat_001"
     },
     {
       "seatId": "seat_002",
@@ -770,7 +895,8 @@
       "seatRow": "A",
       "seatNumber": 2,
       "seatType": "STANDARD",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "id": "seat_002"
     },
     {
       "seatId": "seat_003",
@@ -778,7 +904,8 @@
       "seatRow": "A",
       "seatNumber": 3,
       "seatType": "STANDARD",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "id": "seat_003"
     },
     {
       "seatId": "seat_004",
@@ -786,7 +913,8 @@
       "seatRow": "A",
       "seatNumber": 4,
       "seatType": "STANDARD",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "id": "seat_004"
     },
     {
       "seatId": "seat_005",
@@ -794,7 +922,8 @@
       "seatRow": "A",
       "seatNumber": 5,
       "seatType": "STANDARD",
-      "status": "BROKEN"
+      "status": "BROKEN",
+      "id": "seat_005"
     },
     {
       "seatId": "seat_006",
@@ -802,7 +931,8 @@
       "seatRow": "B",
       "seatNumber": 1,
       "seatType": "STANDARD",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "id": "seat_006"
     },
     {
       "seatId": "seat_007",
@@ -810,7 +940,8 @@
       "seatRow": "B",
       "seatNumber": 2,
       "seatType": "STANDARD",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "id": "seat_007"
     },
     {
       "seatId": "seat_008",
@@ -818,7 +949,8 @@
       "seatRow": "B",
       "seatNumber": 3,
       "seatType": "STANDARD",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "id": "seat_008"
     },
     {
       "seatId": "seat_009",
@@ -826,7 +958,8 @@
       "seatRow": "B",
       "seatNumber": 4,
       "seatType": "STANDARD",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "id": "seat_009"
     },
     {
       "seatId": "seat_010",
@@ -834,7 +967,8 @@
       "seatRow": "B",
       "seatNumber": 5,
       "seatType": "STANDARD",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "id": "seat_010"
     },
     {
       "seatId": "seat_011",
@@ -842,7 +976,8 @@
       "seatRow": "F",
       "seatNumber": 1,
       "seatType": "VIP",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "id": "seat_011"
     },
     {
       "seatId": "seat_012",
@@ -850,7 +985,8 @@
       "seatRow": "F",
       "seatNumber": 2,
       "seatType": "VIP",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "id": "seat_012"
     },
     {
       "seatId": "seat_013",
@@ -858,7 +994,8 @@
       "seatRow": "F",
       "seatNumber": 3,
       "seatType": "VIP",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "id": "seat_013"
     },
     {
       "seatId": "seat_014",
@@ -866,7 +1003,8 @@
       "seatRow": "F",
       "seatNumber": 4,
       "seatType": "VIP",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "id": "seat_014"
     },
     {
       "seatId": "seat_015",
@@ -874,7 +1012,8 @@
       "seatRow": "F",
       "seatNumber": 5,
       "seatType": "VIP",
-      "status": "DISABLED"
+      "status": "DISABLED",
+      "id": "seat_015"
     },
     {
       "seatId": "seat_016",
@@ -882,7 +1021,8 @@
       "seatRow": "G",
       "seatNumber": 1,
       "seatType": "VIP",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "id": "seat_016"
     },
     {
       "seatId": "seat_017",
@@ -890,7 +1030,8 @@
       "seatRow": "G",
       "seatNumber": 2,
       "seatType": "VIP",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "id": "seat_017"
     },
     {
       "seatId": "seat_018",
@@ -898,7 +1039,8 @@
       "seatRow": "K",
       "seatNumber": 1,
       "seatType": "COUPLE",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "id": "seat_018"
     },
     {
       "seatId": "seat_019",
@@ -906,7 +1048,8 @@
       "seatRow": "K",
       "seatNumber": 3,
       "seatType": "COUPLE",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "id": "seat_019"
     },
     {
       "seatId": "seat_020",
@@ -914,7 +1057,8 @@
       "seatRow": "K",
       "seatNumber": 5,
       "seatType": "COUPLE",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "id": "seat_020"
     }
   ],
   "MOVIE": [
@@ -925,8 +1069,16 @@
       "description": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
       "durationMin": 169,
       "director": "Christopher Nolan",
-      "actors": ["Matthew McConaughey", "Anne Hathaway", "Jessica Chastain"],
-      "genres": ["Sci-Fi", "Drama", "Adventure"],
+      "actors": [
+        "Matthew McConaughey",
+        "Anne Hathaway",
+        "Jessica Chastain"
+      ],
+      "genres": [
+        "Sci-Fi",
+        "Drama",
+        "Adventure"
+      ],
       "productionCompany": "Paramount Pictures",
       "releaseDate": "2014-11-07",
       "language": "English",
@@ -935,7 +1087,8 @@
       "posterUrl": "https://www.ubuy.vn/vi/product/IDJ7OA340-interstellar-movie-poster-classic-science-fiction-poster-poster-music-album-cover-poster-wall-art-decor-canvas-poster-for-bedroom-artistic-poster?srsltid=AfmBOorZvOu61FIrC_kdGCe19zGI4RKQC9gyvjDSh8VKQ_pmIW8A7yUl",
       "bannerUrl": "https://www.reddit.com/r/movies/comments/2hti5m/beautiful_new_interstellar_banner/",
       "trailerUrl": "https://www.youtube.com/watch?v=zSWdZVtXT7E",
-      "status": "ENDED"
+      "status": "ENDED",
+      "id": "mov_001"
     },
     {
       "movieId": "mov_002",
@@ -944,8 +1097,16 @@
       "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea.",
       "durationMin": 148,
       "director": "Christopher Nolan",
-      "actors": ["Leonardo DiCaprio", "Joseph Gordon-Levitt", "Elliot Page"],
-      "genres": ["Action", "Sci-Fi", "Thriller"],
+      "actors": [
+        "Leonardo DiCaprio",
+        "Joseph Gordon-Levitt",
+        "Elliot Page"
+      ],
+      "genres": [
+        "Action",
+        "Sci-Fi",
+        "Thriller"
+      ],
       "productionCompany": "Warner Bros. Pictures",
       "releaseDate": "2010-07-16",
       "language": "English",
@@ -954,7 +1115,8 @@
       "posterUrl": "https://images-na.ssl-images-amazon.com/images/I/71uKM+LdgFL.jpg",
       "bannerUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZKBQVo49hvE0pOxgsWUNb3QJe3JUAOLsekpaw7rcoXg&s=10",
       "trailerUrl": "https://www.youtube.com/watch?v=YoHD9XEInc0",
-      "status": "ENDED"
+      "status": "ENDED",
+      "id": "mov_002"
     },
     {
       "movieId": "mov_003",
@@ -963,8 +1125,16 @@
       "description": "Jake Sully lives with his newfound family formed on the extraterrestrial moon of Pandora.",
       "durationMin": 192,
       "director": "James Cameron",
-      "actors": ["Sam Worthington", "Zoe Saldana", "Sigourney Weaver"],
-      "genres": ["Action", "Adventure", "Fantasy"],
+      "actors": [
+        "Sam Worthington",
+        "Zoe Saldana",
+        "Sigourney Weaver"
+      ],
+      "genres": [
+        "Action",
+        "Adventure",
+        "Fantasy"
+      ],
       "productionCompany": "20th Century Studios",
       "releaseDate": "2022-12-16",
       "language": "English",
@@ -973,7 +1143,8 @@
       "posterUrl": "https://m.media-amazon.com/images/I/71W6Yi0j5VL._AC_SX679_.jpg",
       "bannerUrl": "https://images.wallpapersden.com/image/wxl-avatar-2-the-way-of-water-banner_74462.jpg",
       "trailerUrl": "https://www.youtube.com/watch?v=d9MyW72ELq0",
-      "status": "ENDED"
+      "status": "ENDED",
+      "id": "mov_003"
     },
     {
       "movieId": "mov_004",
@@ -982,8 +1153,15 @@
       "description": "After thirty years of service as one of the Navy's top aviators, Pete Mitchell is where he belongs.",
       "durationMin": 130,
       "director": "Joseph Kosinski",
-      "actors": ["Tom Cruise", "Miles Teller", "Jennifer Connelly"],
-      "genres": ["Action", "Drama"],
+      "actors": [
+        "Tom Cruise",
+        "Miles Teller",
+        "Jennifer Connelly"
+      ],
+      "genres": [
+        "Action",
+        "Drama"
+      ],
       "productionCompany": "Paramount Pictures",
       "releaseDate": "2022-05-27",
       "language": "English",
@@ -992,7 +1170,8 @@
       "posterUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSSl2aLZzbcQom3K0TRUpBLk86E2JSODgdgPhenOW9XOdk72op-cWBtJ3v&s=10",
       "bannerUrl": "https://m.media-amazon.com/images/I/71lvUYzEe9L.jpg",
       "trailerUrl": "https://www.youtube.com/watch?v=giXcoYmT0h4",
-      "status": "ENDED"
+      "status": "ENDED",
+      "id": "mov_004"
     },
     {
       "movieId": "mov_005",
@@ -1001,8 +1180,16 @@
       "description": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham.",
       "durationMin": 152,
       "director": "Christopher Nolan",
-      "actors": ["Christian Bale", "Heath Ledger", "Aaron Eckhart"],
-      "genres": ["Action", "Crime", "Drama"],
+      "actors": [
+        "Christian Bale",
+        "Heath Ledger",
+        "Aaron Eckhart"
+      ],
+      "genres": [
+        "Action",
+        "Crime",
+        "Drama"
+      ],
       "productionCompany": "Warner Bros. Pictures",
       "releaseDate": "2008-07-18",
       "language": "English",
@@ -1011,7 +1198,8 @@
       "posterUrl": "https://xl.movieposterdb.com/11_04/2008/468569/xl_468569_87203f5c.jpg",
       "bannerUrl": "https://image.tmdb.org/t/p/original/c3OHQncTAnKFhdOTX7D3LTW6son.jpg",
       "trailerUrl": "https://www.youtube.com/watch?v=EXeTwQWrcwY",
-      "status": "ENDED"
+      "status": "ENDED",
+      "id": "mov_005"
     },
     {
       "movieId": "mov_006",
@@ -1020,8 +1208,16 @@
       "description": "After the devastating events of Avengers: Infinity War, the universe is in ruins.",
       "durationMin": 181,
       "director": "Anthony Russo",
-      "actors": ["Robert Downey Jr.", "Chris Evans", "Mark Ruffalo"],
-      "genres": ["Action", "Sci-Fi", "Adventure"],
+      "actors": [
+        "Robert Downey Jr.",
+        "Chris Evans",
+        "Mark Ruffalo"
+      ],
+      "genres": [
+        "Action",
+        "Sci-Fi",
+        "Adventure"
+      ],
       "productionCompany": "Marvel Studios",
       "releaseDate": "2019-04-26",
       "language": "English",
@@ -1030,7 +1226,8 @@
       "posterUrl": "https://i.ebayimg.com/images/g/t-EAAOSw6SVkViDJ/s-l1200.jpg",
       "bannerUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlpHmpVZqVQ7SSvKbXkdNV-iVjw0gwiNIk7y396zvpihBvgaFiCP8noLa9&s=10",
       "trailerUrl": "https://www.youtube.com/watch?v=TcMBFSGVi1c",
-      "status": "ENDED"
+      "status": "ENDED",
+      "id": "mov_006"
     },
     {
       "movieId": "mov_007",
@@ -1039,8 +1236,15 @@
       "description": "When a beautiful stranger leads computer hacker Neo to a forbidding underworld.",
       "durationMin": 136,
       "director": "Lana Wachowski",
-      "actors": ["Keanu Reeves", "Laurence Fishburne", "Carrie-Anne Moss"],
-      "genres": ["Action", "Sci-Fi"],
+      "actors": [
+        "Keanu Reeves",
+        "Laurence Fishburne",
+        "Carrie-Anne Moss"
+      ],
+      "genres": [
+        "Action",
+        "Sci-Fi"
+      ],
       "productionCompany": "Warner Bros.",
       "releaseDate": "1999-03-31",
       "language": "English",
@@ -1049,7 +1253,8 @@
       "posterUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAUrmtLznye1iEJ84DKF5QnQvGPg36A871obKVxv9GLuWeYBsS8dIjdOw&s=10",
       "bannerUrl": "https://image.tmdb.org/t/p/original/bRm2DEgUiYciDw3myHuYFInD7la.jpg",
       "trailerUrl": "https://www.youtube.com/watch?v=vKQi3bBA1y8",
-      "status": "ENDED"
+      "status": "ENDED",
+      "id": "mov_007"
     },
     {
       "movieId": "mov_008",
@@ -1058,8 +1263,16 @@
       "description": "The story of American scientist J. Robert Oppenheimer and his role in the development of the atomic bomb.",
       "durationMin": 180,
       "director": "Christopher Nolan",
-      "actors": ["Cillian Murphy", "Emily Blunt", "Matt Damon"],
-      "genres": ["Biography", "Drama", "History"],
+      "actors": [
+        "Cillian Murphy",
+        "Emily Blunt",
+        "Matt Damon"
+      ],
+      "genres": [
+        "Biography",
+        "Drama",
+        "History"
+      ],
       "productionCompany": "Universal Pictures",
       "releaseDate": "2023-07-21",
       "language": "English",
@@ -1068,7 +1281,8 @@
       "posterUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4WTP3ZR4wG6f9ezohmAopr7kHUpY8cVGQIZpAeOWmaQ&s",
       "bannerUrl": "https://image.tmdb.org/t/p/original/9dZ52zOs91RMgjjORoMIi6VGNLr.jpg",
       "trailerUrl": "https://www.youtube.com/watch?v=uYPbbksJxIg",
-      "status": "ENDED"
+      "status": "ENDED",
+      "id": "mov_008"
     },
     {
       "movieId": "mov_009",
@@ -1077,8 +1291,15 @@
       "description": "Paul Atreides unites with Chani and the Fremen while seeking revenge against the conspirators who destroyed his family.",
       "durationMin": 166,
       "director": "Denis Villeneuve",
-      "actors": ["TimothÃ©e Chalamet", "Zendaya", "Rebecca Ferguson"],
-      "genres": ["Sci-Fi", "Adventure"],
+      "actors": [
+        "TimothÃ©e Chalamet",
+        "Zendaya",
+        "Rebecca Ferguson"
+      ],
+      "genres": [
+        "Sci-Fi",
+        "Adventure"
+      ],
       "productionCompany": "Legendary Pictures",
       "releaseDate": "2024-03-01",
       "language": "English",
@@ -1087,7 +1308,8 @@
       "posterUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRru9eEzD2l0bwObYua-f0JDka0z52-KMXhdie8ISXPbRdfhTdMXFTSkqM&s=10",
       "bannerUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-J2IM6fHidig4FNTRdZsvyN6MTT9LWH2rHRfHvSvFoQ&s",
       "trailerUrl": "https://www.youtube.com/watch?v=Way9Dexny3w",
-      "status": "NOW_SHOWING"
+      "status": "NOW_SHOWING",
+      "id": "mov_009"
     },
     {
       "movieId": "mov_010",
@@ -1096,8 +1318,16 @@
       "description": "Follow Riley, in her teenage years, encountering new emotions.",
       "durationMin": 96,
       "director": "Kelsey Mann",
-      "actors": ["Amy Poehler", "Phyllis Smith", "Lewis Black"],
-      "genres": ["Animation", "Comedy", "Family"],
+      "actors": [
+        "Amy Poehler",
+        "Phyllis Smith",
+        "Lewis Black"
+      ],
+      "genres": [
+        "Animation",
+        "Comedy",
+        "Family"
+      ],
       "productionCompany": "Pixar Animation Studios",
       "releaseDate": "2024-06-14",
       "language": "English",
@@ -1106,7 +1336,8 @@
       "posterUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN7nlgGfoDq37YpWP5OuGy1twzao0w0s7nkX1UxjK8Xw&s=10",
       "bannerUrl": "https://njfamily-images.s3.amazonaws.com/wp-content/uploads/2025/06/25-08-05-Inside-Out-2pixar.jpg",
       "trailerUrl": "https://www.youtube.com/watch?v=LEjhY2_I4yU",
-      "status": "NOW_SHOWING"
+      "status": "NOW_SHOWING",
+      "id": "mov_010"
     },
     {
       "movieId": "mov_011",
@@ -1115,8 +1346,16 @@
       "description": "Wolverine is recovering from his injuries when he crosses paths with the loudmouth, Deadpool.",
       "durationMin": 127,
       "director": "Shawn Levy",
-      "actors": ["Ryan Reynolds", "Hugh Jackman", "Emma Corrin"],
-      "genres": ["Action", "Comedy", "Sci-Fi"],
+      "actors": [
+        "Ryan Reynolds",
+        "Hugh Jackman",
+        "Emma Corrin"
+      ],
+      "genres": [
+        "Action",
+        "Comedy",
+        "Sci-Fi"
+      ],
       "productionCompany": "Marvel Studios",
       "releaseDate": "2024-07-26",
       "language": "English",
@@ -1125,7 +1364,8 @@
       "posterUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQfv2hv5yuGFsi6Q2U_hzl2yT1a3ETrD7WUgyaE-NZ1DaV2GMOpk_w1KE&s=10",
       "bannerUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAmsfDBD80p4J_K6rmTRoGZhYW-JFWkw2lpbi7tKbuNQ&s=10",
       "trailerUrl": "https://www.youtube.com/watch?v=73_1biulk6g",
-      "status": "NOW_SHOWING"
+      "status": "NOW_SHOWING",
+      "id": "mov_011"
     },
     {
       "movieId": "mov_012",
@@ -1134,8 +1374,16 @@
       "description": "Gru and Lucy and their girls welcome a new member to the Gru family, Gru Jr.",
       "durationMin": 95,
       "director": "Chris Renaud",
-      "actors": ["Steve Carell", "Kristen Wiig", "Will Ferrell"],
-      "genres": ["Animation", "Comedy", "Family"],
+      "actors": [
+        "Steve Carell",
+        "Kristen Wiig",
+        "Will Ferrell"
+      ],
+      "genres": [
+        "Animation",
+        "Comedy",
+        "Family"
+      ],
       "productionCompany": "Illumination Entertainment",
       "releaseDate": "2024-07-03",
       "language": "English",
@@ -1144,7 +1392,8 @@
       "posterUrl": "https://myhotposters.com/cdn/shop/files/mL7239_1a775154-dd1e-4400-bfb8-e6adf8884516_1024x1024.jpg?v=1748531156",
       "bannerUrl": "https://preview.redd.it/official-poster-for-despicable-me-4-v0-vc9s3yp3t8fc1.jpeg?auto=webp&s=732f85b4bef474b30fe1919fc7d3086a72f68318",
       "trailerUrl": "https://www.youtube.com/watch?v=qQlr9-rF3q4",
-      "status": "NOW_SHOWING"
+      "status": "NOW_SHOWING",
+      "id": "mov_012"
     },
     {
       "movieId": "mov_013",
@@ -1153,8 +1402,16 @@
       "description": "Experience the day the world went quiet.",
       "durationMin": 100,
       "director": "Michael Sarnoski",
-      "actors": ["Lupita Nyong'o", "Joseph Quinn", "Alex Wolff"],
-      "genres": ["Horror", "Sci-Fi", "Thriller"],
+      "actors": [
+        "Lupita Nyong'o",
+        "Joseph Quinn",
+        "Alex Wolff"
+      ],
+      "genres": [
+        "Horror",
+        "Sci-Fi",
+        "Thriller"
+      ],
       "productionCompany": "Paramount Pictures",
       "releaseDate": "2024-06-28",
       "language": "English",
@@ -1163,7 +1420,8 @@
       "posterUrl": "https://images.squarespace-cdn.com/content/v1/5efce5920d28887981c5bd9b/3ebc806f-56f0-4412-af2e-d2b557627bda/A+Quiet+Place+Day+One+Poster+2.jpg",
       "bannerUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXVDfWUuc8FvGvui3jjFpyNPau82HYfX9BvA9T_di-PdydZ2C099lTKqE&s=10",
       "trailerUrl": "https://www.youtube.com/watch?v=YPY7J-flzE8",
-      "status": "NOW_SHOWING"
+      "status": "NOW_SHOWING",
+      "id": "mov_013"
     },
     {
       "movieId": "mov_014",
@@ -1172,8 +1430,16 @@
       "description": "Failed comedian Arthur Fleck meets the love of his life, Harley Quinn, while incarcerated at Arkham State Hospital.",
       "durationMin": 138,
       "director": "Todd Phillips",
-      "actors": ["Joaquin Phoenix", "Lady Gaga", "Brendan Gleeson"],
-      "genres": ["Drama", "Crime", "Musical"],
+      "actors": [
+        "Joaquin Phoenix",
+        "Lady Gaga",
+        "Brendan Gleeson"
+      ],
+      "genres": [
+        "Drama",
+        "Crime",
+        "Musical"
+      ],
       "productionCompany": "Warner Bros. Pictures",
       "releaseDate": "2024-10-04",
       "language": "English",
@@ -1182,7 +1448,8 @@
       "posterUrl": "https://deadline.com/wp-content/uploads/2024/09/JOKER2_INSTA_VERT_Skyline_1638x2048_DOM.jpg?w=800",
       "bannerUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3xjlRBKoUtc05MdXun9XzwE9XLEFYyAhF9PlTmKHvWe07r1Bdc82Fh1s&s=10g",
       "trailerUrl": "https://www.youtube.com/watch?v=xy8aJw1vYHo",
-      "status": "NOW_SHOWING"
+      "status": "NOW_SHOWING",
+      "id": "mov_014"
     },
     {
       "movieId": "mov_015",
@@ -1191,8 +1458,16 @@
       "description": "After his home is conquered by the tyrannical emperors who now lead Rome, Lucius is forced to enter the Colosseum.",
       "durationMin": 150,
       "director": "Ridley Scott",
-      "actors": ["Paul Mescal", "Pedro Pascal", "Denzel Washington"],
-      "genres": ["Action", "Drama", "Adventure"],
+      "actors": [
+        "Paul Mescal",
+        "Pedro Pascal",
+        "Denzel Washington"
+      ],
+      "genres": [
+        "Action",
+        "Drama",
+        "Adventure"
+      ],
       "productionCompany": "Paramount Pictures",
       "releaseDate": "2024-11-22",
       "language": "English",
@@ -1201,7 +1476,8 @@
       "posterUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMTfm_ZqCtSPqqIHsyrdNF17H9ZerOQX2M8ocqsxKtcJW8BqKFh7xgfno&s=10",
       "bannerUrl": "https://pocculture.com/wp-content/uploads/2024/07/G2_DOM_Online_Teaser_1-Sheet_07_FIN4-min-e1720569522171.jpg",
       "trailerUrl": "https://www.youtube.com/watch?v=4rgIUelwa80",
-      "status": "NOW_SHOWING"
+      "status": "NOW_SHOWING",
+      "id": "mov_015"
     },
     {
       "movieId": "mov_016",
@@ -1210,8 +1486,16 @@
       "description": "The story of how a green-skinned woman framed by the Wizard of Oz becomes the Wicked Witch of the West.",
       "durationMin": 140,
       "director": "Jon M. Chu",
-      "actors": ["Cynthia Erivo", "Ariana Grande", "Jonathan Bailey"],
-      "genres": ["Fantasy", "Musical", "Romance"],
+      "actors": [
+        "Cynthia Erivo",
+        "Ariana Grande",
+        "Jonathan Bailey"
+      ],
+      "genres": [
+        "Fantasy",
+        "Musical",
+        "Romance"
+      ],
       "productionCompany": "Universal Pictures",
       "releaseDate": "2024-11-27",
       "language": "English",
@@ -1220,7 +1504,8 @@
       "posterUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-IY3KwVqQXq9Yw8tTzX_7FCK4tqg3Ryg0I5IteLQJ2gIb1id9J5pHHvSX&s=10",
       "bannerUrl": "https://film-authority.com/wp-content/uploads/2024/11/HO00003139.jpg",
       "trailerUrl": "https://www.youtube.com/watch?v=6COmYeLsz4c",
-      "status": "COMING_SOON"
+      "status": "COMING_SOON",
+      "id": "mov_016"
     },
     {
       "movieId": "mov_017",
@@ -1229,8 +1514,16 @@
       "description": "The third installment of the Avatar franchise exploring the Ash People of Pandora.",
       "durationMin": 160,
       "director": "James Cameron",
-      "actors": ["Sam Worthington", "Zoe Saldana", "Oona Chaplin"],
-      "genres": ["Action", "Sci-Fi", "Fantasy"],
+      "actors": [
+        "Sam Worthington",
+        "Zoe Saldana",
+        "Oona Chaplin"
+      ],
+      "genres": [
+        "Action",
+        "Sci-Fi",
+        "Fantasy"
+      ],
       "productionCompany": "20th Century Studios",
       "releaseDate": "2025-12-19",
       "language": "English",
@@ -1239,7 +1532,8 @@
       "posterUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQA0fnAQWEmmuqcGuFHZ84z4B7Z2VwIylVW9wnK_h0Q99KjkBEyqc9VsIA&s=10",
       "bannerUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-mJ9jStDf6hvMsQSKX_MgVBpIYCG2UEE4PepZc91CBk7mUhE7g4RW3A&s=10",
       "trailerUrl": "https://www.youtube.com/watch?v=Z4m7wz1v_8o",
-      "status": "COMING_SOON"
+      "status": "COMING_SOON",
+      "id": "mov_017"
     },
     {
       "movieId": "mov_018",
@@ -1248,8 +1542,16 @@
       "description": "The Avengers face off against the universal threat of Doctor Doom.",
       "durationMin": 150,
       "director": "Anthony Russo",
-      "actors": ["Robert Downey Jr.", "Pedro Pascal", "Benedict Cumberbatch"],
-      "genres": ["Action", "Sci-Fi", "Adventure"],
+      "actors": [
+        "Robert Downey Jr.",
+        "Pedro Pascal",
+        "Benedict Cumberbatch"
+      ],
+      "genres": [
+        "Action",
+        "Sci-Fi",
+        "Adventure"
+      ],
       "productionCompany": "Marvel Studios",
       "releaseDate": "2026-05-01",
       "language": "English",
@@ -1258,7 +1560,8 @@
       "posterUrl": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/2e317a1c-f1ce-4a5f-90db-d88cc01db2d0/djvgtik-c72e1ea6-a126-4b87-a028-596739409187.png/v1/fill/w_1280,h_1896,q_80,strp/avengers_doomsday_poster_4k_hd_2026_by_mrandrew7w7_djvgtik-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTg5NiIsInBhdGgiOiIvZi8yZTMxN2ExYy1mMWNlLTRhNWYtOTBkYi1kODhjYzAxZGIyZDAvZGp2Z3Rpay1jNzJlMWVhNi1hMTI2LTRiODctYTAyOC01OTY3Mzk0MDkxODcucG5nIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.iebZWiAm2CiTr0Qqk90VPS8qQugye8KlGgBAMYiDAyQ",
       "bannerUrl": "https://preview.redd.it/avengers-doomsday-poster-featuring-everyone-my-biggest-v0-39utp2oos39g1.png?auto=webp&s=0309e8360b1efae2bb2b064a1cf6220218550e38",
       "trailerUrl": "https://www.youtube.com/watch?v=hA6AUgpdp84",
-      "status": "COMING_SOON"
+      "status": "COMING_SOON",
+      "id": "mov_018"
     },
     {
       "movieId": "mov_019",
@@ -1267,8 +1570,16 @@
       "description": "The sequel to Matt Reeves' gritty take on the Dark Knight.",
       "durationMin": 165,
       "director": "Matt Reeves",
-      "actors": ["Robert Pattinson", "Colin Farrell", "Andy Serkis"],
-      "genres": ["Action", "Crime", "Drama"],
+      "actors": [
+        "Robert Pattinson",
+        "Colin Farrell",
+        "Andy Serkis"
+      ],
+      "genres": [
+        "Action",
+        "Crime",
+        "Drama"
+      ],
       "productionCompany": "Warner Bros. Pictures",
       "releaseDate": "2026-10-02",
       "language": "English",
@@ -1277,7 +1588,8 @@
       "posterUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSL5NYbdvjB6u8uUz2rdjZ1-FsNWnxdDBd8LAJQTt7SxXiqGB-CgUx8UNs&s=10",
       "bannerUrl": "https://assets.murphysmultiverse.com/uploads/2024/12/DC_The_Batman_2.jpg",
       "trailerUrl": "https://www.youtube.com/watch?v=eQY_R9pY7vY",
-      "status": "COMING_SOON"
+      "status": "COMING_SOON",
+      "id": "mov_019"
     },
     {
       "movieId": "mov_020",
@@ -1291,7 +1603,11 @@
         "Jonathan Bailey",
         "Manuel Garcia-Rulfo"
       ],
-      "genres": ["Action", "Adventure", "Sci-Fi"],
+      "genres": [
+        "Action",
+        "Adventure",
+        "Sci-Fi"
+      ],
       "productionCompany": "Universal Pictures",
       "releaseDate": "2025-07-02",
       "language": "English",
@@ -1300,7 +1616,8 @@
       "posterUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtR2k8WMsSciuyqvyavqx6FtWqbxkIsmu9HH67VF05BnOT4AfgJkCbfPc&s=10",
       "bannerUrl": "https://www.tallengestore.com/cdn/shop/files/JurassicEarthRebirth-OriginalMovieReleasePosterH_94dfa9d2-98b6-4b6b-a491-fcf13f65a829.jpg?v=1752136502",
       "trailerUrl": "https://www.youtube.com/watch?v=4vVvR_8gT28",
-      "status": "COMING_SOON"
+      "status": "COMING_SOON",
+      "id": "mov_020"
     }
   ],
   "SHOWTIME": [
@@ -1312,7 +1629,8 @@
       "endAt": "2026-06-18T17:01:00Z",
       "basePrice": 90000,
       "format": "2D Subtitled",
-      "status": "OPEN"
+      "status": "OPEN",
+      "id": "show_001"
     },
     {
       "showtimeId": "show_002",
@@ -1322,7 +1640,8 @@
       "endAt": "2026-06-18T19:51:00Z",
       "basePrice": 95000,
       "format": "2D Dubbed",
-      "status": "OPEN"
+      "status": "OPEN",
+      "id": "show_002"
     },
     {
       "showtimeId": "show_003",
@@ -1332,7 +1651,8 @@
       "endAt": "2026-06-19T12:22:00Z",
       "basePrice": 150000,
       "format": "IMAX 3D",
-      "status": "OPEN"
+      "status": "OPEN",
+      "id": "show_003"
     },
     {
       "showtimeId": "show_004",
@@ -1342,7 +1662,8 @@
       "endAt": "2026-06-19T14:50:00Z",
       "basePrice": 110000,
       "format": "3D Dubbed",
-      "status": "OPEN"
+      "status": "OPEN",
+      "id": "show_004"
     },
     {
       "showtimeId": "show_005",
@@ -1352,7 +1673,8 @@
       "endAt": "2026-06-20T21:55:00Z",
       "basePrice": 160000,
       "format": "4DX Subtitled",
-      "status": "OPEN"
+      "status": "OPEN",
+      "id": "show_005"
     },
     {
       "showtimeId": "show_006",
@@ -1362,7 +1684,8 @@
       "endAt": "2026-06-10T12:04:00Z",
       "basePrice": 80000,
       "format": "2D Classic",
-      "status": "FINISHED"
+      "status": "FINISHED",
+      "id": "show_006"
     },
     {
       "showtimeId": "show_007",
@@ -1372,7 +1695,8 @@
       "endAt": "2026-06-11T17:43:00Z",
       "basePrice": 80000,
       "format": "2D Subtitled",
-      "status": "FINISHED"
+      "status": "FINISHED",
+      "id": "show_007"
     },
     {
       "showtimeId": "show_008",
@@ -1382,7 +1706,8 @@
       "endAt": "2026-06-12T22:27:00Z",
       "basePrice": 140000,
       "format": "IMAX 3D",
-      "status": "FINISHED"
+      "status": "FINISHED",
+      "id": "show_008"
     },
     {
       "showtimeId": "show_009",
@@ -1392,7 +1717,8 @@
       "endAt": "2026-06-21T21:03:00Z",
       "basePrice": 250000,
       "format": "GoldClass Luxury",
-      "status": "OPEN"
+      "status": "OPEN",
+      "id": "show_009"
     },
     {
       "showtimeId": "show_010",
@@ -1402,7 +1728,8 @@
       "endAt": "2026-06-22T23:45:00Z",
       "basePrice": 95000,
       "format": "2D Subtitled",
-      "status": "OPEN"
+      "status": "OPEN",
+      "id": "show_010"
     },
     {
       "showtimeId": "show_011",
@@ -1412,7 +1739,8 @@
       "endAt": "2026-06-18T23:01:00Z",
       "basePrice": 160000,
       "format": "IMAX 2D",
-      "status": "SOLD_OUT"
+      "status": "SOLD_OUT",
+      "id": "show_011"
     },
     {
       "showtimeId": "show_012",
@@ -1422,7 +1750,8 @@
       "endAt": "2026-06-23T11:51:00Z",
       "basePrice": 85000,
       "format": "Kids 2D Dubbed",
-      "status": "OPEN"
+      "status": "OPEN",
+      "id": "show_012"
     },
     {
       "showtimeId": "show_013",
@@ -1432,7 +1761,8 @@
       "endAt": "2026-06-24T16:52:00Z",
       "basePrice": 130000,
       "format": "ScreenX Subtitled",
-      "status": "OPEN"
+      "status": "OPEN",
+      "id": "show_013"
     },
     {
       "showtimeId": "show_014",
@@ -1442,7 +1772,8 @@
       "endAt": "2026-06-25T17:50:00Z",
       "basePrice": 90000,
       "format": "2D Dubbed",
-      "status": "OPEN"
+      "status": "OPEN",
+      "id": "show_014"
     },
     {
       "showtimeId": "show_015",
@@ -1452,7 +1783,8 @@
       "endAt": "2026-06-26T21:25:00Z",
       "basePrice": 110000,
       "format": "3D Subtitled",
-      "status": "OPEN"
+      "status": "OPEN",
+      "id": "show_015"
     },
     {
       "showtimeId": "show_016",
@@ -1462,7 +1794,8 @@
       "endAt": "2026-06-27T22:48:00Z",
       "basePrice": 95000,
       "format": "2D Subtitled",
-      "status": "OPEN"
+      "status": "OPEN",
+      "id": "show_016"
     },
     {
       "showtimeId": "show_017",
@@ -1472,7 +1805,8 @@
       "endAt": "2026-06-28T15:45:00Z",
       "basePrice": 90000,
       "format": "2D Subtitled",
-      "status": "OPEN"
+      "status": "OPEN",
+      "id": "show_017"
     },
     {
       "showtimeId": "show_018",
@@ -1482,7 +1816,8 @@
       "endAt": "2026-06-12T16:25:00Z",
       "basePrice": 80000,
       "format": "2D Re-release",
-      "status": "FINISHED"
+      "status": "FINISHED",
+      "id": "show_018"
     },
     {
       "showtimeId": "show_019",
@@ -1492,7 +1827,8 @@
       "endAt": "2026-06-13T23:47:00Z",
       "basePrice": 100000,
       "format": "3D IMAX Tribute",
-      "status": "CANCELLED"
+      "status": "CANCELLED",
+      "id": "show_019"
     },
     {
       "showtimeId": "show_020",
@@ -1502,7 +1838,8 @@
       "endAt": "2026-06-29T21:16:00Z",
       "basePrice": 200000,
       "format": "VIP Studio IMAX",
-      "status": "OPEN"
+      "status": "OPEN",
+      "id": "show_020"
     }
   ],
   "SHOWTIME_SEAT": [
@@ -1512,7 +1849,8 @@
       "seatId": "seat_001",
       "seatType": "STANDARD",
       "status": "BOOKED",
-      "price": 90000
+      "price": 90000,
+      "id": "sh_st_001"
     },
     {
       "showtimeSeatId": "sh_st_002",
@@ -1520,7 +1858,8 @@
       "seatId": "seat_002",
       "seatType": "STANDARD",
       "status": "BOOKED",
-      "price": 90000
+      "price": 90000,
+      "id": "sh_st_002"
     },
     {
       "showtimeSeatId": "sh_st_003",
@@ -1528,7 +1867,8 @@
       "seatId": "seat_003",
       "seatType": "STANDARD",
       "status": "HELD",
-      "price": 90000
+      "price": 90000,
+      "id": "sh_st_003"
     },
     {
       "showtimeSeatId": "sh_st_004",
@@ -1536,7 +1876,8 @@
       "seatId": "seat_004",
       "seatType": "STANDARD",
       "status": "AVAILABLE",
-      "price": 90000
+      "price": 90000,
+      "id": "sh_st_004"
     },
     {
       "showtimeSeatId": "sh_st_005",
@@ -1544,7 +1885,8 @@
       "seatId": "seat_005",
       "seatType": "STANDARD",
       "status": "BLOCKED",
-      "price": 90000
+      "price": 90000,
+      "id": "sh_st_005"
     },
     {
       "showtimeSeatId": "sh_st_006",
@@ -1552,7 +1894,8 @@
       "seatId": "seat_006",
       "seatType": "STANDARD",
       "status": "AVAILABLE",
-      "price": 90000
+      "price": 90000,
+      "id": "sh_st_006"
     },
     {
       "showtimeSeatId": "sh_st_007",
@@ -1560,7 +1903,8 @@
       "seatId": "seat_007",
       "seatType": "STANDARD",
       "status": "AVAILABLE",
-      "price": 90000
+      "price": 90000,
+      "id": "sh_st_007"
     },
     {
       "showtimeSeatId": "sh_st_008",
@@ -1568,7 +1912,8 @@
       "seatId": "seat_008",
       "seatType": "STANDARD",
       "status": "BOOKED",
-      "price": 90000
+      "price": 90000,
+      "id": "sh_st_008"
     },
     {
       "showtimeSeatId": "sh_st_009",
@@ -1576,7 +1921,8 @@
       "seatId": "seat_009",
       "seatType": "STANDARD",
       "status": "AVAILABLE",
-      "price": 90000
+      "price": 90000,
+      "id": "sh_st_009"
     },
     {
       "showtimeSeatId": "sh_st_010",
@@ -1584,7 +1930,8 @@
       "seatId": "seat_010",
       "seatType": "STANDARD",
       "status": "AVAILABLE",
-      "price": 90000
+      "price": 90000,
+      "id": "sh_st_010"
     },
     {
       "showtimeSeatId": "sh_st_011",
@@ -1592,7 +1939,8 @@
       "seatId": "seat_011",
       "seatType": "VIP",
       "status": "AVAILABLE",
-      "price": 110000
+      "price": 110000,
+      "id": "sh_st_011"
     },
     {
       "showtimeSeatId": "sh_st_012",
@@ -1600,7 +1948,8 @@
       "seatId": "seat_012",
       "seatType": "VIP",
       "status": "BOOKED",
-      "price": 110000
+      "price": 110000,
+      "id": "sh_st_012"
     },
     {
       "showtimeSeatId": "sh_st_013",
@@ -1608,7 +1957,8 @@
       "seatId": "seat_013",
       "seatType": "VIP",
       "status": "BOOKED",
-      "price": 110000
+      "price": 110000,
+      "id": "sh_st_013"
     },
     {
       "showtimeSeatId": "sh_st_014",
@@ -1616,7 +1966,8 @@
       "seatId": "seat_014",
       "seatType": "VIP",
       "status": "HELD",
-      "price": 110000
+      "price": 110000,
+      "id": "sh_st_014"
     },
     {
       "showtimeSeatId": "sh_st_015",
@@ -1624,7 +1975,8 @@
       "seatId": "seat_015",
       "seatType": "VIP",
       "status": "BLOCKED",
-      "price": 110000
+      "price": 110000,
+      "id": "sh_st_015"
     },
     {
       "showtimeSeatId": "sh_st_016",
@@ -1632,7 +1984,8 @@
       "seatId": "seat_016",
       "seatType": "VIP",
       "status": "AVAILABLE",
-      "price": 110000
+      "price": 110000,
+      "id": "sh_st_016"
     },
     {
       "showtimeSeatId": "sh_st_017",
@@ -1640,7 +1993,8 @@
       "seatId": "seat_017",
       "seatType": "VIP",
       "status": "AVAILABLE",
-      "price": 110000
+      "price": 110000,
+      "id": "sh_st_017"
     },
     {
       "showtimeSeatId": "sh_st_018",
@@ -1648,7 +2002,8 @@
       "seatId": "seat_018",
       "seatType": "COUPLE",
       "status": "AVAILABLE",
-      "price": 200000
+      "price": 200000,
+      "id": "sh_st_018"
     },
     {
       "showtimeSeatId": "sh_st_019",
@@ -1656,7 +2011,8 @@
       "seatId": "seat_019",
       "seatType": "COUPLE",
       "status": "BOOKED",
-      "price": 200000
+      "price": 200000,
+      "id": "sh_st_019"
     },
     {
       "showtimeSeatId": "sh_st_020",
@@ -1664,7 +2020,8 @@
       "seatId": "seat_020",
       "seatType": "COUPLE",
       "status": "AVAILABLE",
-      "price": 200000
+      "price": 200000,
+      "id": "sh_st_020"
     }
   ],
   "PROMOTION": [
@@ -1680,7 +2037,8 @@
       "startAt": "2026-01-01T00:00:00Z",
       "endAt": "2026-12-31T23:59:59Z",
       "status": "ACTIVE",
-      "imageUrl": "https://images.unsplash.com/photo-1526367790999-0150786486a9"
+      "imageUrl": "https://images.unsplash.com/photo-1526367790999-0150786486a9",
+      "id": "promo_001"
     },
     {
       "promotionId": "promo_002",
@@ -1694,7 +2052,8 @@
       "startAt": "2026-01-01T00:00:00Z",
       "endAt": "2026-12-31T23:59:59Z",
       "status": "ACTIVE",
-      "imageUrl": "https://images.unsplash.com/photo-1541339907198-e08756dedf3f"
+      "imageUrl": "https://images.unsplash.com/photo-1541339907198-e08756dedf3f",
+      "id": "promo_002"
     },
     {
       "promotionId": "promo_003",
@@ -1708,7 +2067,8 @@
       "startAt": "2026-05-01T00:00:00Z",
       "endAt": "2026-08-31T23:59:59Z",
       "status": "ACTIVE",
-      "imageUrl": "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c"
+      "imageUrl": "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c",
+      "id": "promo_003"
     },
     {
       "promotionId": "promo_004",
@@ -1722,7 +2082,8 @@
       "startAt": "2026-06-01T00:00:00Z",
       "endAt": "2026-06-30T23:59:59Z",
       "status": "ACTIVE",
-      "imageUrl": "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba"
+      "imageUrl": "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba",
+      "id": "promo_004"
     },
     {
       "promotionId": "promo_005",
@@ -1736,7 +2097,8 @@
       "startAt": "2026-01-01T00:00:00Z",
       "endAt": "2026-12-31T23:59:59Z",
       "status": "ACTIVE",
-      "imageUrl": "https://images.unsplash.com/photo-1536440136628-849c177e76a1"
+      "imageUrl": "https://images.unsplash.com/photo-1536440136628-849c177e76a1",
+      "id": "promo_005"
     },
     {
       "promotionId": "promo_006",
@@ -1750,7 +2112,8 @@
       "startAt": "2026-06-01T00:00:00Z",
       "endAt": "2026-08-31T23:59:59Z",
       "status": "ACTIVE",
-      "imageUrl": null
+      "imageUrl": null,
+      "id": "promo_006"
     },
     {
       "promotionId": "promo_007",
@@ -1764,7 +2127,8 @@
       "startAt": "2026-02-01T00:00:00Z",
       "endAt": "2026-12-31T23:59:59Z",
       "status": "ACTIVE",
-      "imageUrl": null
+      "imageUrl": null,
+      "id": "promo_007"
     },
     {
       "promotionId": "promo_008",
@@ -1778,7 +2142,8 @@
       "startAt": "2026-01-01T00:00:00Z",
       "endAt": "2026-03-01T23:59:59Z",
       "status": "EXPIRED",
-      "imageUrl": null
+      "imageUrl": null,
+      "id": "promo_008"
     },
     {
       "promotionId": "promo_009",
@@ -1792,7 +2157,8 @@
       "startAt": "2026-01-01T00:00:00Z",
       "endAt": "2026-12-31T23:59:59Z",
       "status": "ACTIVE",
-      "imageUrl": null
+      "imageUrl": null,
+      "id": "promo_009"
     },
     {
       "promotionId": "promo_010",
@@ -1806,7 +2172,8 @@
       "startAt": "2026-01-01T00:00:00Z",
       "endAt": "2026-01-05T23:59:59Z",
       "status": "EXPIRED",
-      "imageUrl": null
+      "imageUrl": null,
+      "id": "promo_010"
     },
     {
       "promotionId": "promo_011",
@@ -1820,7 +2187,8 @@
       "startAt": "2026-04-01T00:00:00Z",
       "endAt": "2026-12-31T23:59:59Z",
       "status": "ACTIVE",
-      "imageUrl": null
+      "imageUrl": null,
+      "id": "promo_011"
     },
     {
       "promotionId": "promo_012",
@@ -1834,7 +2202,8 @@
       "startAt": "2026-04-01T00:00:00Z",
       "endAt": "2026-12-31T23:59:59Z",
       "status": "ACTIVE",
-      "imageUrl": null
+      "imageUrl": null,
+      "id": "promo_012"
     },
     {
       "promotionId": "promo_013",
@@ -1848,7 +2217,8 @@
       "startAt": "2026-05-01T00:00:00Z",
       "endAt": "2026-08-31T23:59:59Z",
       "status": "ACTIVE",
-      "imageUrl": null
+      "imageUrl": null,
+      "id": "promo_013"
     },
     {
       "promotionId": "promo_014",
@@ -1862,7 +2232,8 @@
       "startAt": "2026-02-01T00:00:00Z",
       "endAt": "2026-02-28T23:59:59Z",
       "status": "EXPIRED",
-      "imageUrl": null
+      "imageUrl": null,
+      "id": "promo_014"
     },
     {
       "promotionId": "promo_015",
@@ -1876,7 +2247,8 @@
       "startAt": "2026-03-08T00:00:00Z",
       "endAt": "2026-03-08T23:59:59Z",
       "status": "EXPIRED",
-      "imageUrl": null
+      "imageUrl": null,
+      "id": "promo_015"
     },
     {
       "promotionId": "promo_016",
@@ -1890,7 +2262,8 @@
       "startAt": "2026-05-01T00:00:00Z",
       "endAt": "2026-05-31T23:59:59Z",
       "status": "EXPIRED",
-      "imageUrl": null
+      "imageUrl": null,
+      "id": "promo_016"
     },
     {
       "promotionId": "promo_017",
@@ -1904,7 +2277,8 @@
       "startAt": "2026-06-01T00:00:00Z",
       "endAt": "2026-06-30T23:59:59Z",
       "status": "ACTIVE",
-      "imageUrl": null
+      "imageUrl": null,
+      "id": "promo_017"
     },
     {
       "promotionId": "promo_018",
@@ -1918,7 +2292,8 @@
       "startAt": "2026-01-01T00:00:00Z",
       "endAt": "2026-12-31T23:59:59Z",
       "status": "ACTIVE",
-      "imageUrl": null
+      "imageUrl": null,
+      "id": "promo_018"
     },
     {
       "promotionId": "promo_019",
@@ -1932,7 +2307,8 @@
       "startAt": "2026-12-01T00:00:00Z",
       "endAt": "2026-12-31T23:59:59Z",
       "status": "INACTIVE",
-      "imageUrl": null
+      "imageUrl": null,
+      "id": "promo_019"
     },
     {
       "promotionId": "promo_020",
@@ -1946,7 +2322,8 @@
       "startAt": "2026-01-01T00:00:00Z",
       "endAt": "2026-12-31T23:59:59Z",
       "status": "ACTIVE",
-      "imageUrl": null
+      "imageUrl": null,
+      "id": "promo_020"
     }
   ],
   "BOOKING": [
@@ -1966,7 +2343,8 @@
       "paymentStatus": "PAID",
       "bookingStatus": "CONFIRMED",
       "createdAt": "2026-06-18T10:15:00Z",
-      "updatedAt": "2026-06-18T10:17:22Z"
+      "updatedAt": "2026-06-18T10:17:22Z",
+      "id": "bk_001"
     },
     {
       "bookingId": "bk_002",
@@ -1984,7 +2362,8 @@
       "paymentStatus": "PAID",
       "bookingStatus": "CONFIRMED",
       "createdAt": "2026-06-18T11:00:00Z",
-      "updatedAt": "2026-06-18T11:02:10Z"
+      "updatedAt": "2026-06-18T11:02:10Z",
+      "id": "bk_002"
     },
     {
       "bookingId": "bk_003",
@@ -2002,7 +2381,8 @@
       "paymentStatus": "PAID",
       "bookingStatus": "CONFIRMED",
       "createdAt": "2026-06-18T11:30:00Z",
-      "updatedAt": "2026-06-18T11:32:45Z"
+      "updatedAt": "2026-06-18T11:32:45Z",
+      "id": "bk_003"
     },
     {
       "bookingId": "bk_004",
@@ -2020,7 +2400,8 @@
       "paymentStatus": "PAID",
       "bookingStatus": "CONFIRMED",
       "createdAt": "2026-06-18T12:00:00Z",
-      "updatedAt": "2026-06-18T12:03:15Z"
+      "updatedAt": "2026-06-18T12:03:15Z",
+      "id": "bk_004"
     },
     {
       "bookingId": "bk_005",
@@ -2038,7 +2419,8 @@
       "paymentStatus": "PAID",
       "bookingStatus": "COMPLETED",
       "createdAt": "2026-06-10T08:45:00Z",
-      "updatedAt": "2026-06-10T08:45:00Z"
+      "updatedAt": "2026-06-10T08:45:00Z",
+      "id": "bk_005"
     },
     {
       "bookingId": "bk_006",
@@ -2056,7 +2438,8 @@
       "paymentStatus": "PAID",
       "bookingStatus": "COMPLETED",
       "createdAt": "2026-06-11T14:10:00Z",
-      "updatedAt": "2026-06-11T14:12:00Z"
+      "updatedAt": "2026-06-11T14:12:00Z",
+      "id": "bk_006"
     },
     {
       "bookingId": "bk_007",
@@ -2074,7 +2457,8 @@
       "paymentStatus": "PAID",
       "bookingStatus": "COMPLETED",
       "createdAt": "2026-06-12T18:00:00Z",
-      "updatedAt": "2026-06-12T18:02:30Z"
+      "updatedAt": "2026-06-12T18:02:30Z",
+      "id": "bk_007"
     },
     {
       "bookingId": "bk_008",
@@ -2092,7 +2476,8 @@
       "paymentStatus": "PENDING",
       "bookingStatus": "RESERVED",
       "createdAt": "2026-06-18T13:45:00Z",
-      "updatedAt": "2026-06-18T13:45:00Z"
+      "updatedAt": "2026-06-18T13:45:00Z",
+      "id": "bk_008"
     },
     {
       "bookingId": "bk_009",
@@ -2110,7 +2495,8 @@
       "paymentStatus": "FAILED",
       "bookingStatus": "CANCELLED",
       "createdAt": "2026-06-18T13:10:00Z",
-      "updatedAt": "2026-06-18T13:25:00Z"
+      "updatedAt": "2026-06-18T13:25:00Z",
+      "id": "bk_009"
     },
     {
       "bookingId": "bk_010",
@@ -2128,7 +2514,8 @@
       "paymentStatus": "PAID",
       "bookingStatus": "CONFIRMED",
       "createdAt": "2026-06-18T15:00:00Z",
-      "updatedAt": "2026-06-18T15:03:00Z"
+      "updatedAt": "2026-06-18T15:03:00Z",
+      "id": "bk_010"
     },
     {
       "bookingId": "bk_011",
@@ -2146,7 +2533,8 @@
       "paymentStatus": "PAID",
       "bookingStatus": "CONFIRMED",
       "createdAt": "2026-06-18T16:00:00Z",
-      "updatedAt": "2026-06-18T16:02:00Z"
+      "updatedAt": "2026-06-18T16:02:00Z",
+      "id": "bk_011"
     },
     {
       "bookingId": "bk_012",
@@ -2164,7 +2552,8 @@
       "paymentStatus": "PAID",
       "bookingStatus": "CONFIRMED",
       "createdAt": "2026-06-18T17:00:00Z",
-      "updatedAt": "2026-06-18T17:01:30Z"
+      "updatedAt": "2026-06-18T17:01:30Z",
+      "id": "bk_012"
     },
     {
       "bookingId": "bk_013",
@@ -2182,7 +2571,8 @@
       "paymentStatus": "PAID",
       "bookingStatus": "CONFIRMED",
       "createdAt": "2026-06-18T18:20:00Z",
-      "updatedAt": "2026-06-18T18:22:10Z"
+      "updatedAt": "2026-06-18T18:22:10Z",
+      "id": "bk_013"
     },
     {
       "bookingId": "bk_014",
@@ -2200,7 +2590,8 @@
       "paymentStatus": "FAILED",
       "bookingStatus": "CANCELLED",
       "createdAt": "2026-06-18T19:00:00Z",
-      "updatedAt": "2026-06-18T19:15:00Z"
+      "updatedAt": "2026-06-18T19:15:00Z",
+      "id": "bk_014"
     },
     {
       "bookingId": "bk_015",
@@ -2218,7 +2609,8 @@
       "paymentStatus": "PAID",
       "bookingStatus": "CONFIRMED",
       "createdAt": "2026-06-18T20:00:00Z",
-      "updatedAt": "2026-06-18T20:01:45Z"
+      "updatedAt": "2026-06-18T20:01:45Z",
+      "id": "bk_015"
     },
     {
       "bookingId": "bk_016",
@@ -2236,7 +2628,8 @@
       "paymentStatus": "PAID",
       "bookingStatus": "CONFIRMED",
       "createdAt": "2026-06-18T21:00:00Z",
-      "updatedAt": "2026-06-18T21:02:15Z"
+      "updatedAt": "2026-06-18T21:02:15Z",
+      "id": "bk_016"
     },
     {
       "bookingId": "bk_017",
@@ -2254,7 +2647,8 @@
       "paymentStatus": "PAID",
       "bookingStatus": "CONFIRMED",
       "createdAt": "2026-06-18T21:30:00Z",
-      "updatedAt": "2026-06-18T21:31:10Z"
+      "updatedAt": "2026-06-18T21:31:10Z",
+      "id": "bk_017"
     },
     {
       "bookingId": "bk_018",
@@ -2272,7 +2666,8 @@
       "paymentStatus": "PAID",
       "bookingStatus": "CONFIRMED",
       "createdAt": "2026-06-18T22:00:00Z",
-      "updatedAt": "2026-06-18T22:02:50Z"
+      "updatedAt": "2026-06-18T22:02:50Z",
+      "id": "bk_018"
     },
     {
       "bookingId": "bk_019",
@@ -2290,7 +2685,8 @@
       "paymentStatus": "PAID",
       "bookingStatus": "CONFIRMED",
       "createdAt": "2026-06-18T22:30:00Z",
-      "updatedAt": "2026-06-18T22:32:05Z"
+      "updatedAt": "2026-06-18T22:32:05Z",
+      "id": "bk_019"
     },
     {
       "bookingId": "bk_020",
@@ -2308,7 +2704,8 @@
       "paymentStatus": "PAID",
       "bookingStatus": "CONFIRMED",
       "createdAt": "2026-06-18T23:00:00Z",
-      "updatedAt": "2026-06-18T23:01:40Z"
+      "updatedAt": "2026-06-18T23:01:40Z",
+      "id": "bk_020"
     }
   ],
   "BOOKING_SEAT": [
@@ -2316,145 +2713,169 @@
       "bookingSeatId": "bk_st_001",
       "bookingId": "bk_001",
       "showtimeSeatId": "sh_st_001",
-      "price": 90000
+      "price": 90000,
+      "id": "bk_st_001"
     },
     {
       "bookingSeatId": "bk_st_002",
       "bookingId": "bk_001",
       "showtimeSeatId": "sh_st_002",
-      "price": 90000
+      "price": 90000,
+      "id": "bk_st_002"
     },
     {
       "bookingSeatId": "bk_st_003",
       "bookingId": "bk_002",
       "showtimeSeatId": "sh_st_008",
-      "price": 90000
+      "price": 90000,
+      "id": "bk_st_003"
     },
     {
       "bookingSeatId": "bk_st_004",
       "bookingId": "bk_003",
       "showtimeSeatId": "sh_st_012",
-      "price": 110000
+      "price": 110000,
+      "id": "bk_st_004"
     },
     {
       "bookingSeatId": "bk_st_005",
       "bookingId": "bk_003",
       "showtimeSeatId": "sh_st_013",
-      "price": 110000
+      "price": 110000,
+      "id": "bk_st_005"
     },
     {
       "bookingSeatId": "bk_st_006",
       "bookingId": "bk_004",
       "showtimeSeatId": "sh_st_019",
-      "price": 200000
+      "price": 200000,
+      "id": "bk_st_006"
     },
     {
       "bookingSeatId": "bk_st_007",
       "bookingId": "bk_005",
       "showtimeSeatId": "sh_st_004",
-      "price": 80000
+      "price": 80000,
+      "id": "bk_st_007"
     },
     {
       "bookingSeatId": "bk_st_008",
       "bookingId": "bk_006",
       "showtimeSeatId": "sh_st_006",
-      "price": 80000
+      "price": 80000,
+      "id": "bk_st_008"
     },
     {
       "bookingSeatId": "bk_st_009",
       "bookingId": "bk_007",
       "showtimeSeatId": "sh_st_011",
-      "price": 140000
+      "price": 140000,
+      "id": "bk_st_009"
     },
     {
       "bookingSeatId": "bk_st_010",
       "bookingId": "bk_008",
       "showtimeSeatId": "sh_st_003",
-      "price": 95000
+      "price": 95000,
+      "id": "bk_st_010"
     },
     {
       "bookingSeatId": "bk_st_011",
       "bookingId": "bk_010",
       "showtimeSeatId": "sh_st_014",
-      "price": 150000
+      "price": 150000,
+      "id": "bk_st_011"
     },
     {
       "bookingSeatId": "bk_st_012",
       "bookingId": "bk_011",
       "showtimeSeatId": "sh_st_016",
-      "price": 110000
+      "price": 110000,
+      "id": "bk_st_012"
     },
     {
       "bookingSeatId": "bk_st_013",
       "bookingId": "bk_012",
       "showtimeSeatId": "sh_st_007",
-      "price": 160000
+      "price": 160000,
+      "id": "bk_st_013"
     },
     {
       "bookingSeatId": "bk_st_014",
       "bookingId": "bk_013",
       "showtimeSeatId": "sh_st_018",
-      "price": 250000
+      "price": 250000,
+      "id": "bk_st_014"
     },
     {
       "bookingSeatId": "bk_st_015",
       "bookingId": "bk_015",
       "showtimeSeatId": "sh_st_009",
-      "price": 85000
+      "price": 85000,
+      "id": "bk_st_015"
     },
     {
       "bookingSeatId": "bk_st_016",
       "bookingId": "bk_016",
       "showtimeSeatId": "sh_st_010",
-      "price": 130000
+      "price": 130000,
+      "id": "bk_st_016"
     },
     {
       "bookingSeatId": "bk_st_017",
       "bookingId": "bk_017",
       "showtimeSeatId": "sh_st_015",
-      "price": 90000
+      "price": 90000,
+      "id": "bk_st_017"
     },
     {
       "bookingSeatId": "bk_st_018",
       "bookingId": "bk_018",
       "showtimeSeatId": "sh_st_017",
-      "price": 110000
+      "price": 110000,
+      "id": "bk_st_018"
     },
     {
       "bookingSeatId": "bk_st_019",
       "bookingId": "bk_019",
       "showtimeSeatId": "sh_st_020",
-      "price": 95000
+      "price": 95000,
+      "id": "bk_st_019"
     },
     {
       "bookingSeatId": "bk_st_020",
       "bookingId": "bk_020",
       "showtimeSeatId": "sh_st_005",
-      "price": 90000
+      "price": 90000,
+      "id": "bk_st_020"
     },
     {
       "bookingSeatId": "bk_st_021",
       "bookingId": "bk_010",
       "showtimeSeatId": "sh_st_002",
-      "price": 150000
+      "price": 150000,
+      "id": "bk_st_021"
     },
     {
       "bookingSeatId": "bk_st_022",
       "bookingId": "bk_012",
       "showtimeSeatId": "sh_st_011",
-      "price": 160000
+      "price": 160000,
+      "id": "bk_st_022"
     },
     {
       "bookingSeatId": "bk_st_023",
       "bookingId": "bk_013",
       "showtimeSeatId": "sh_st_012",
-      "price": 250000
+      "price": 250000,
+      "id": "bk_st_023"
     },
     {
       "bookingSeatId": "bk_st_024",
       "bookingId": "bk_015",
       "showtimeSeatId": "sh_st_013",
-      "price": 85000
+      "price": 85000,
+      "id": "bk_st_024"
     }
   ],
   "TICKET": [
@@ -2466,7 +2887,8 @@
       "issuedAt": "2026-06-18T10:17:22Z",
       "isUsed": false,
       "usedAt": null,
-      "checkedInByEmployeeId": null
+      "checkedInByEmployeeId": null,
+      "id": "tk_001"
     },
     {
       "ticketId": "tk_002",
@@ -2476,7 +2898,8 @@
       "issuedAt": "2026-06-18T10:17:22Z",
       "isUsed": false,
       "usedAt": null,
-      "checkedInByEmployeeId": null
+      "checkedInByEmployeeId": null,
+      "id": "tk_002"
     },
     {
       "ticketId": "tk_003",
@@ -2486,7 +2909,8 @@
       "issuedAt": "2026-06-18T11:02:10Z",
       "isUsed": false,
       "usedAt": null,
-      "checkedInByEmployeeId": null
+      "checkedInByEmployeeId": null,
+      "id": "tk_003"
     },
     {
       "ticketId": "tk_004",
@@ -2496,7 +2920,8 @@
       "issuedAt": "2026-06-18T11:32:45Z",
       "isUsed": false,
       "usedAt": null,
-      "checkedInByEmployeeId": null
+      "checkedInByEmployeeId": null,
+      "id": "tk_004"
     },
     {
       "ticketId": "tk_005",
@@ -2506,7 +2931,8 @@
       "issuedAt": "2026-06-18T11:32:45Z",
       "isUsed": false,
       "usedAt": null,
-      "checkedInByEmployeeId": null
+      "checkedInByEmployeeId": null,
+      "id": "tk_005"
     },
     {
       "ticketId": "tk_006",
@@ -2516,7 +2942,8 @@
       "issuedAt": "2026-06-18T12:03:15Z",
       "isUsed": false,
       "usedAt": null,
-      "checkedInByEmployeeId": null
+      "checkedInByEmployeeId": null,
+      "id": "tk_006"
     },
     {
       "ticketId": "tk_007",
@@ -2526,7 +2953,8 @@
       "issuedAt": "2026-06-10T08:45:00Z",
       "isUsed": true,
       "usedAt": "2026-06-10T08:55:00Z",
-      "checkedInByEmployeeId": "emp_cuong"
+      "checkedInByEmployeeId": "emp_cuong",
+      "id": "tk_007"
     },
     {
       "ticketId": "tk_008",
@@ -2536,7 +2964,8 @@
       "issuedAt": "2026-06-11T14:12:00Z",
       "isUsed": true,
       "usedAt": "2026-06-11T14:50:00Z",
-      "checkedInByEmployeeId": "emp_mai"
+      "checkedInByEmployeeId": "emp_mai",
+      "id": "tk_008"
     },
     {
       "ticketId": "tk_009",
@@ -2546,7 +2975,8 @@
       "issuedAt": "2026-06-12T18:02:30Z",
       "isUsed": true,
       "usedAt": "2026-06-12T18:45:00Z",
-      "checkedInByEmployeeId": "emp_cuong"
+      "checkedInByEmployeeId": "emp_cuong",
+      "id": "tk_009"
     },
     {
       "ticketId": "tk_010",
@@ -2556,7 +2986,8 @@
       "issuedAt": "2026-06-18T15:03:00Z",
       "isUsed": false,
       "usedAt": null,
-      "checkedInByEmployeeId": null
+      "checkedInByEmployeeId": null,
+      "id": "tk_010"
     },
     {
       "ticketId": "tk_011",
@@ -2566,7 +2997,8 @@
       "issuedAt": "2026-06-18T16:02:00Z",
       "isUsed": false,
       "usedAt": null,
-      "checkedInByEmployeeId": null
+      "checkedInByEmployeeId": null,
+      "id": "tk_011"
     },
     {
       "ticketId": "tk_012",
@@ -2576,7 +3008,8 @@
       "issuedAt": "2026-06-18T17:01:30Z",
       "isUsed": false,
       "usedAt": null,
-      "checkedInByEmployeeId": null
+      "checkedInByEmployeeId": null,
+      "id": "tk_012"
     },
     {
       "ticketId": "tk_013",
@@ -2586,7 +3019,8 @@
       "issuedAt": "2026-06-18T18:22:10Z",
       "isUsed": false,
       "usedAt": null,
-      "checkedInByEmployeeId": null
+      "checkedInByEmployeeId": null,
+      "id": "tk_013"
     },
     {
       "ticketId": "tk_014",
@@ -2596,7 +3030,8 @@
       "issuedAt": "2026-06-18T20:01:45Z",
       "isUsed": false,
       "usedAt": null,
-      "checkedInByEmployeeId": null
+      "checkedInByEmployeeId": null,
+      "id": "tk_014"
     },
     {
       "ticketId": "tk_015",
@@ -2606,7 +3041,8 @@
       "issuedAt": "2026-06-18T21:02:15Z",
       "isUsed": false,
       "usedAt": null,
-      "checkedInByEmployeeId": null
+      "checkedInByEmployeeId": null,
+      "id": "tk_015"
     },
     {
       "ticketId": "tk_016",
@@ -2616,7 +3052,8 @@
       "issuedAt": "2026-06-18T21:31:10Z",
       "isUsed": false,
       "usedAt": null,
-      "checkedInByEmployeeId": null
+      "checkedInByEmployeeId": null,
+      "id": "tk_016"
     },
     {
       "ticketId": "tk_017",
@@ -2626,7 +3063,8 @@
       "issuedAt": "2026-06-18T22:02:50Z",
       "isUsed": false,
       "usedAt": null,
-      "checkedInByEmployeeId": null
+      "checkedInByEmployeeId": null,
+      "id": "tk_017"
     },
     {
       "ticketId": "tk_018",
@@ -2636,7 +3074,8 @@
       "issuedAt": "2026-06-18T22:32:05Z",
       "isUsed": false,
       "usedAt": null,
-      "checkedInByEmployeeId": null
+      "checkedInByEmployeeId": null,
+      "id": "tk_018"
     },
     {
       "ticketId": "tk_019",
@@ -2646,7 +3085,8 @@
       "issuedAt": "2026-06-18T23:01:40Z",
       "isUsed": false,
       "usedAt": null,
-      "checkedInByEmployeeId": null
+      "checkedInByEmployeeId": null,
+      "id": "tk_019"
     },
     {
       "ticketId": "tk_020",
@@ -2656,7 +3096,8 @@
       "issuedAt": "2026-06-18T15:03:00Z",
       "isUsed": false,
       "usedAt": null,
-      "checkedInByEmployeeId": null
+      "checkedInByEmployeeId": null,
+      "id": "tk_020"
     },
     {
       "ticketId": "tk_021",
@@ -2666,7 +3107,8 @@
       "issuedAt": "2026-06-18T17:01:30Z",
       "isUsed": false,
       "usedAt": null,
-      "checkedInByEmployeeId": null
+      "checkedInByEmployeeId": null,
+      "id": "tk_021"
     },
     {
       "ticketId": "tk_022",
@@ -2676,7 +3118,8 @@
       "issuedAt": "2026-06-18T18:22:10Z",
       "isUsed": false,
       "usedAt": null,
-      "checkedInByEmployeeId": null
+      "checkedInByEmployeeId": null,
+      "id": "tk_022"
     },
     {
       "ticketId": "tk_023",
@@ -2686,7 +3129,8 @@
       "issuedAt": "2026-06-18T20:01:45Z",
       "isUsed": false,
       "usedAt": null,
-      "checkedInByEmployeeId": null
+      "checkedInByEmployeeId": null,
+      "id": "tk_023"
     }
   ]
 }
