@@ -1,5 +1,5 @@
 // api/index.mjs — Vercel Serverless Function
-import { createApp } from 'json-server';
+import { createApp } from 'json-server/lib/app.js';
 import { Low, Memory } from 'lowdb';
 import fs from 'fs';
 import path from 'path';
