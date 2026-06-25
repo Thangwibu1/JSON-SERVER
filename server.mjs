@@ -7,6 +7,38 @@ import { spawn } from 'child_process';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+function parseBody(req) {
+  return new Promise((resolve, reject) => {
+    let body = '';
+    req.on('data', chunk => {
+      body += chunk.toString();
+    });
+    req.on('end', () => {
+      try {
+        resolve(body ? JSON.parse(body) : {});
+      } catch (err) {
+        reject(err);
+      }
+    });
+  });
+}
+
+function generateNextId(list, prefix, idField) {
+  let maxNum = 0;
+  for (const item of list) {
+    const idVal = item[idField];
+    if (typeof idVal === 'string' && idVal.startsWith(prefix)) {
+      const numPart = idVal.slice(prefix.length);
+      const num = parseInt(numPart, 10);
+      if (!isNaN(num) && num > maxNum) {
+        maxNum = num;
+      }
+    }
+  }
+  const nextNum = maxNum + 1;
+  return `${prefix}${String(nextNum).padStart(3, '0')}`;
+}
+
 // Spawn json-server on port 3001
 const jsonServerPort = 3001;
 const serverPort = process.env.PORT || 3000;
@@ -20,6 +52,129 @@ const child = spawn('npx', ['json-server', 'db.json', '--port', String(jsonServe
 // Create the wrapping server on port 3000
 const server = http.createServer((req, res) => {
   const url = new URL(req.url, `http://${req.headers.host}`);
+
+  // Handle CORS preflight for /register
+  if (url.pathname === '/register' && req.method === 'OPTIONS') {
+    res.writeHead(204, {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'POST, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+      'Content-Length': '0'
+    });
+    res.end();
+    return;
+  }
+
+  // Handle Custom Register endpoint
+  if (url.pathname === '/register' && req.method === 'POST') {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+
+    parseBody(req)
+      .then(body => {
+        const { username, password, passwordHash, fullName, email, phoneNumber } = body;
+        
+        // 1. Simple validation
+        if (!username || (!password && !passwordHash) || !fullName || !email || !phoneNumber) {
+          res.writeHead(400, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ error: 'Missing required fields' }));
+          return;
+        }
+
+        // 2. Read database file
+        const dbPath = path.join(__dirname, 'db.json');
+        let dbData;
+        try {
+          dbData = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
+        } catch (err) {
+          res.writeHead(500, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ error: 'Failed to read database file', details: err.message }));
+          return;
+        }
+
+        // Ensure collections exist
+        if (!dbData.ACCOUNT) dbData.ACCOUNT = [];
+        if (!dbData.MEMBER_PROFILE) dbData.MEMBER_PROFILE = [];
+
+        // Check if username or email already exists
+        const exists = dbData.ACCOUNT.some(
+          acc => acc.username === username || acc.email === email
+        );
+        if (exists) {
+          res.writeHead(400, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ error: 'Username or Email already exists' }));
+          return;
+        }
+
+        // 3. Generate IDs
+        const nextAccountId = generateNextId(dbData.ACCOUNT, 'acc_', 'accountId');
+        const nextMemberProfileId = generateNextId(dbData.MEMBER_PROFILE, 'mem_prof_', 'memberId');
+
+        // 4. Create Account record
+        const now = new Date().toISOString();
+        const newAccount = {
+          id: nextAccountId,
+          accountId: nextAccountId,
+          username,
+          passwordHash: passwordHash || password,
+          fullName,
+          email,
+          phoneNumber,
+          dateOfBirth: body.dateOfBirth || null,
+          gender: body.gender || null,
+          identityCard: body.identityCard || null,
+          address: body.address || null,
+          avatarUrl: body.avatarUrl || null,
+          role: body.role || 'MEMBER',
+          status: body.status || 'ACTIVE',
+          createdAt: now,
+          updatedAt: now,
+          lastLoginAt: now
+        };
+
+        // 5. Create Member Profile record (if role is MEMBER)
+        let newProfile = null;
+        if (newAccount.role === 'MEMBER') {
+          newProfile = {
+            id: nextMemberProfileId,
+            memberId: nextMemberProfileId,
+            accountId: nextAccountId,
+            points: 0,
+            tier: 'STANDARD',
+            favoriteGenres: body.favoriteGenres || [],
+            joinedAt: now
+          };
+        }
+
+        // Save records to arrays
+        dbData.ACCOUNT.push(newAccount);
+        if (newProfile) {
+          dbData.MEMBER_PROFILE.push(newProfile);
+        }
+
+        // 6. Write back to db.json
+        try {
+          fs.writeFileSync(dbPath, JSON.stringify(dbData, null, 2), 'utf8');
+        } catch (err) {
+          res.writeHead(500, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ error: 'Failed to write to database file', details: err.message }));
+          return;
+        }
+
+        res.writeHead(201, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({
+          message: 'Registration successful',
+          account: newAccount,
+          memberProfile: newProfile
+        }));
+      })
+      .catch(err => {
+        res.writeHead(400, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: 'Invalid JSON payload', details: err.message }));
+      });
+    return;
+  }
   
   // Serve swagger.json
   if (url.pathname === '/swagger.json') {

@@ -25,6 +25,55 @@
     { "name": "Ticket", "description": "Manage issued entrance tickets" }
   ],
   "paths": {
+    "/register": {
+      "post": {
+        "tags": ["Account"],
+        "summary": "Register a new member account and profile",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["username", "password", "fullName", "email", "phoneNumber"],
+                "properties": {
+                  "username": { "type": "string", "example": "new_member" },
+                  "password": { "type": "string", "example": "securePass123" },
+                  "fullName": { "type": "string", "example": "Nguyễn Đức Huy" },
+                  "email": { "type": "string", "example": "huy.nd@movietheater.com" },
+                  "phoneNumber": { "type": "string", "example": "0901234567" },
+                  "dateOfBirth": { "type": "string", "format": "date", "example": "1990-05-12" },
+                  "gender": { "type": "string", "example": "MALE" },
+                  "identityCard": { "type": "string", "example": "001090123456" },
+                  "address": { "type": "string", "example": "123 Lê Lợi, Quận 1, TP. Hồ Chí Minh" },
+                  "avatarUrl": { "type": "string", "example": "https://i.pravatar.cc/150?img=33" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful registration",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": { "type": "string", "example": "Registration successful" },
+                    "account": { "$ref": "#/components/schemas/Account" },
+                    "memberProfile": { "$ref": "#/components/schemas/MemberProfile" }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request (e.g. user already exists)"
+          }
+        }
+      }
+    },
     "/ACCOUNT": {
       "get": {
         "tags": ["Account"],
