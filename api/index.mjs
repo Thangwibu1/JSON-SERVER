@@ -1,266 +1,361 @@
-// api/index.mjs — Vercel Serverless Function
-import { createApp } from 'json-server/lib/app.js';
-import { Low, Memory } from 'lowdb';
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
+// Vercel Serverless Function. This intentionally uses only Node.js APIs so it
+// does not depend on json-server's local static-directory scanner on Vercel.
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Đọc db.json một lần (cached trong cùng serverless instance)
-const dbData = JSON.parse(
+const initialDatabase = JSON.parse(
   fs.readFileSync(path.join(__dirname, '..', 'db.json'), 'utf8')
 );
 const swaggerSpec = JSON.parse(
   fs.readFileSync(path.join(__dirname, '..', 'swagger.json'), 'utf8')
 );
 
-// Cache app instance (reused across requests trong cùng một instance)
-let appInstance = null;
-let dbInstance = null;
+// A warm Vercel function keeps mutations for subsequent requests. A new cold
+// instance starts again from db.json, which is appropriate for this mock API.
+const database = structuredClone(initialDatabase);
 
-async function getApp() {
-  if (appInstance) return appInstance;
-  dbInstance = new Low(new Memory(), dbData);
-  await dbInstance.read();
-  appInstance = createApp(dbInstance);
-  return appInstance;
+const idFields = {
+  ACCOUNT: 'accountId',
+  MEMBER_PROFILE: 'memberId',
+  CINEMA_ROOM: 'roomId',
+  SEAT: 'seatId',
+  MOVIE: 'movieId',
+  SHOWTIME: 'showtimeId',
+  SHOWTIME_SEAT: 'showtimeSeatId',
+  PROMOTION: 'promotionId',
+  BOOKING: 'bookingId',
+  BOOKING_SEAT: 'bookingSeatId',
+  TICKET: 'ticketId',
+};
+
+const idPrefixes = {
+  ACCOUNT: 'acc_',
+  MEMBER_PROFILE: 'mem_prof_',
+  CINEMA_ROOM: 'room_',
+  SEAT: 'seat_',
+  MOVIE: 'mov_',
+  SHOWTIME: 'show_',
+  SHOWTIME_SEAT: 'sh_st_',
+  PROMOTION: 'promo_',
+  BOOKING: 'bk_',
+  BOOKING_SEAT: 'bk_st_',
+  TICKET: 'tk_',
+};
+
+function setCors(res) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 }
 
-function parseBody(req) {
+function sendJson(res, status, body) {
+  res.statusCode = status;
+  res.setHeader('Content-Type', 'application/json; charset=utf-8');
+  res.end(JSON.stringify(body));
+}
+
+async function readBody(req) {
+  if (req.body && typeof req.body === 'object' && !Buffer.isBuffer(req.body)) {
+    return req.body;
+  }
+  if (typeof req.body === 'string' || Buffer.isBuffer(req.body)) {
+    return JSON.parse(req.body.toString() || '{}');
+  }
+
   return new Promise((resolve, reject) => {
-    let body = '';
-    req.on('data', chunk => {
-      body += chunk.toString();
-    });
+    let raw = '';
+    req.on('data', (chunk) => { raw += chunk.toString(); });
     req.on('end', () => {
       try {
-        resolve(body ? JSON.parse(body) : {});
-      } catch (err) {
-        reject(err);
+        resolve(raw ? JSON.parse(raw) : {});
+      } catch (error) {
+        reject(new Error(`Invalid JSON payload: ${error.message}`));
       }
     });
+    req.on('error', reject);
   });
 }
 
-function generateNextId(list, prefix, idField) {
-  let maxNum = 0;
+function generateNextId(resource) {
+  const list = database[resource];
+  const idField = idFields[resource];
+  const prefix = idPrefixes[resource];
+  let max = 0;
+
   for (const item of list) {
-    const idVal = item[idField];
-    if (typeof idVal === 'string' && idVal.startsWith(prefix)) {
-      const numPart = idVal.slice(prefix.length);
-      const num = parseInt(numPart, 10);
-      if (!isNaN(num) && num > maxNum) {
-        maxNum = num;
-      }
-    }
+    const value = String(item[idField] ?? item.id ?? '');
+    if (!value.startsWith(prefix)) continue;
+    const numericPart = Number.parseInt(value.slice(prefix.length), 10);
+    if (Number.isFinite(numericPart)) max = Math.max(max, numericPart);
   }
-  const nextNum = maxNum + 1;
-  return `${prefix}${String(nextNum).padStart(3, '0')}`;
+
+  return `${prefix}${String(max + 1).padStart(3, '0')}`;
 }
 
-function buildSwaggerHtml(host) {
+function findItemIndex(resource, id) {
+  const idField = idFields[resource];
+  return database[resource].findIndex(
+    (item) => String(item.id) === id || String(item[idField]) === id
+  );
+}
+
+function filterCollection(items, url) {
+  const reserved = new Set(['_sort', '_order', '_page', '_limit', '_per_page']);
+  let result = items.filter((item) => {
+    for (const [key, value] of url.searchParams.entries()) {
+      if (reserved.has(key)) continue;
+      if (String(item[key]) !== value) return false;
+    }
+    return true;
+  });
+
+  const sortField = url.searchParams.get('_sort');
+  if (sortField) {
+    const descending = sortField.startsWith('-') || url.searchParams.get('_order') === 'desc';
+    const field = sortField.replace(/^-/, '');
+    result = [...result].sort((left, right) => {
+      const comparison = String(left[field] ?? '').localeCompare(
+        String(right[field] ?? ''), undefined, { numeric: true }
+      );
+      return descending ? -comparison : comparison;
+    });
+  }
+
+  const page = Number.parseInt(url.searchParams.get('_page'), 10);
+  const pageSize = Number.parseInt(
+    url.searchParams.get('_per_page') ?? url.searchParams.get('_limit'), 10
+  );
+  if (Number.isFinite(page) && Number.isFinite(pageSize) && page > 0 && pageSize > 0) {
+    result = result.slice((page - 1) * pageSize, page * pageSize);
+  }
+
+  return result;
+}
+
+function buildSwaggerHtml() {
   return `<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>Movie Theater API - Swagger UI</title>
-    <link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@5.11.0/swagger-ui.css" />
-    <link rel="icon" type="image/png" href="https://unpkg.com/swagger-ui-dist@5.11.0/favicon-32x32.png" sizes="32x32" />
-    <style>
-      html { box-sizing: border-box; overflow-y: scroll; }
-      *, *:before, *:after { box-sizing: inherit; }
-      body { margin: 0; background: #fafafa; }
-      .topbar {
-        background: #1b1b1b;
-        padding: 10px 0;
-        border-bottom: 3px solid #f29c1f;
-      }
-      .topbar .wrapper {
-        display: flex;
-        align-items: center;
-        max-width: 1460px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
-      .topbar-logo {
-        color: #fff;
-        font-family: sans-serif;
-        font-size: 20px;
-        font-weight: bold;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-      }
-      .topbar-logo span { color: #f29c1f; margin-left: 5px; }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Movie Theater API</title>
+    <link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@5.11.0/swagger-ui.css">
   </head>
   <body>
-    <div class="topbar">
-      <div class="wrapper">
-        <a class="topbar-logo" href="#">🎬 MovieTheater<span>API Mock</span></a>
-      </div>
-    </div>
     <div id="swagger-ui"></div>
-    <script src="https://unpkg.com/swagger-ui-dist@5.11.0/swagger-ui-bundle.js" charset="UTF-8"></script>
-    <script src="https://unpkg.com/swagger-ui-dist@5.11.0/swagger-ui-standalone-preset.js" charset="UTF-8"></script>
+    <script src="https://unpkg.com/swagger-ui-dist@5.11.0/swagger-ui-bundle.js"></script>
     <script>
-      window.onload = function() {
-        SwaggerUIBundle({
-          url: "/swagger.json",
-          dom_id: '#swagger-ui',
-          deepLinking: true,
-          presets: [SwaggerUIBundle.presets.apis, SwaggerUIStandalonePreset],
-          plugins: [SwaggerUIBundle.plugins.DownloadUrl],
-          layout: "StandaloneLayout"
-        });
-      };
+      SwaggerUIBundle({
+        url: '/swagger.json',
+        dom_id: '#swagger-ui',
+        deepLinking: true,
+        layout: 'BaseLayout'
+      });
     </script>
   </body>
 </html>`;
 }
 
+async function register(req, res) {
+  let body;
+  try {
+    body = await readBody(req);
+  } catch (error) {
+    sendJson(res, 400, { error: error.message });
+    return;
+  }
+
+  const { username, password, passwordHash, fullName, email, phoneNumber } = body;
+  if (!username || (!password && !passwordHash) || !fullName || !email || !phoneNumber) {
+    sendJson(res, 400, { error: 'Missing required fields' });
+    return;
+  }
+
+  const duplicate = database.ACCOUNT.some(
+    (account) => account.username === username || account.email === email
+  );
+  if (duplicate) {
+    sendJson(res, 409, { error: 'Username or Email already exists' });
+    return;
+  }
+
+  const now = new Date().toISOString();
+  const accountId = generateNextId('ACCOUNT');
+  const account = {
+    id: accountId,
+    accountId,
+    username,
+    passwordHash: passwordHash || password,
+    fullName,
+    email,
+    phoneNumber,
+    dateOfBirth: body.dateOfBirth || null,
+    gender: body.gender || null,
+    identityCard: body.identityCard || null,
+    address: body.address || null,
+    avatarUrl: body.avatarUrl || null,
+    role: body.role || 'MEMBER',
+    status: body.status || 'ACTIVE',
+    createdAt: now,
+    updatedAt: now,
+    lastLoginAt: now,
+  };
+  database.ACCOUNT.push(account);
+
+  let memberProfile = null;
+  if (account.role === 'MEMBER') {
+    const memberId = generateNextId('MEMBER_PROFILE');
+    memberProfile = {
+      id: memberId,
+      memberId,
+      accountId,
+      points: 0,
+      tier: 'STANDARD',
+      favoriteGenres: body.favoriteGenres || [],
+      joinedAt: now,
+    };
+    database.MEMBER_PROFILE.push(memberProfile);
+  }
+
+  sendJson(res, 201, {
+    message: 'Registration successful',
+    account,
+    memberProfile,
+  });
+}
+
+async function handleResource(req, res, resource, id, url) {
+  const collection = database[resource];
+
+  if (req.method === 'GET' && !id) {
+    sendJson(res, 200, filterCollection(collection, url));
+    return;
+  }
+
+  if (req.method === 'GET' && id) {
+    const index = findItemIndex(resource, id);
+    if (index < 0) return sendJson(res, 404, { error: 'Not Found' });
+    sendJson(res, 200, collection[index]);
+    return;
+  }
+
+  if (req.method === 'POST' && !id) {
+    let body;
+    try {
+      body = await readBody(req);
+    } catch (error) {
+      return sendJson(res, 400, { error: error.message });
+    }
+    if (!body || Array.isArray(body) || typeof body !== 'object') {
+      return sendJson(res, 400, { error: 'Body must be a JSON object' });
+    }
+    const idField = idFields[resource];
+    const newId = body.id || body[idField] || generateNextId(resource);
+    if (findItemIndex(resource, String(newId)) >= 0) {
+      return sendJson(res, 409, { error: `Resource with id ${newId} already exists` });
+    }
+    const created = { ...body, [idField]: body[idField] || newId, id: newId };
+    collection.push(created);
+    sendJson(res, 201, created);
+    return;
+  }
+
+  if ((req.method === 'PUT' || req.method === 'PATCH') && id) {
+    const index = findItemIndex(resource, id);
+    if (index < 0) return sendJson(res, 404, { error: 'Not Found' });
+    let body;
+    try {
+      body = await readBody(req);
+    } catch (error) {
+      return sendJson(res, 400, { error: error.message });
+    }
+    if (!body || Array.isArray(body) || typeof body !== 'object') {
+      return sendJson(res, 400, { error: 'Body must be a JSON object' });
+    }
+    const existing = collection[index];
+    const replacement = req.method === 'PATCH'
+      ? { ...existing, ...body }
+      : { ...body };
+    const idField = idFields[resource];
+    replacement.id = replacement.id || existing.id || id;
+    replacement[idField] = replacement[idField] || existing[idField] || id;
+    collection[index] = replacement;
+    sendJson(res, 200, replacement);
+    return;
+  }
+
+  if (req.method === 'DELETE' && id) {
+    const index = findItemIndex(resource, id);
+    if (index < 0) return sendJson(res, 404, { error: 'Not Found' });
+    const [deleted] = collection.splice(index, 1);
+    sendJson(res, 200, deleted);
+    return;
+  }
+
+  sendJson(res, 405, { error: 'Method Not Allowed' });
+}
+
 export default async function handler(req, res) {
-  const rawUrl = req.url || '/';
-  const pathname = rawUrl.split('?')[0];
-
-  // CORS headers
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-
+  setCors(res);
   if (req.method === 'OPTIONS') {
-    res.writeHead(200);
+    res.statusCode = 204;
     res.end();
     return;
   }
 
-  // Swagger UI page
-  if (pathname === '/api-docs' || pathname === '/api-docs/') {
-    res.setHeader('Content-Type', 'text/html; charset=utf-8');
-    res.end(buildSwaggerHtml(req.headers.host));
+  const host = req.headers.host || 'localhost:3000';
+  const protocol = req.headers['x-forwarded-proto'] || 'http';
+  const url = new URL(req.url || '/', `${protocol}://${host}`);
+  let pathname = url.pathname.replace(/\/+$/, '') || '/';
+  if (pathname === '/api') pathname = '/';
+  else if (pathname.startsWith('/api/')) pathname = pathname.slice(4);
+
+  if (pathname === '/') {
+    sendJson(res, 200, {
+      name: 'Movie Theater API',
+      documentation: '/api-docs',
+      resources: Object.fromEntries(
+        Object.entries(database).map(([name, records]) => [name, records.length])
+      ),
+    });
     return;
   }
 
-  // swagger.json với server URL động
   if (pathname === '/swagger.json') {
-    const host = req.headers.host || 'localhost:3000';
-    const proto = req.headers['x-forwarded-proto'] || 'http';
-    const baseUrl = `${proto}://${host}`;
-
-    const dynamicSpec = {
+    sendJson(res, 200, {
       ...swaggerSpec,
       servers: [
-        { url: baseUrl, description: 'Current server (Vercel / Local)' },
+        { url: `${protocol}://${host}`, description: 'Current server' },
         { url: 'http://localhost:3000', description: 'Local development' },
       ],
-    };
-
-    res.setHeader('Content-Type', 'application/json');
-    res.end(JSON.stringify(dynamicSpec, null, 2));
+    });
     return;
   }
 
-  // Handle Custom Register endpoint
-  if ((pathname === '/register' || pathname === '/api/register') && req.method === 'POST') {
-    try {
-      await getApp();
-      const dbData = dbInstance.data;
-
-      let body = req.body;
-      if (typeof body === 'string') {
-        body = JSON.parse(body);
-      } else if (!body || Object.keys(body).length === 0) {
-        body = await parseBody(req);
-      }
-
-      const { username, password, passwordHash, fullName, email, phoneNumber } = body;
-      
-      // 1. Simple validation
-      if (!username || (!password && !passwordHash) || !fullName || !email || !phoneNumber) {
-        res.writeHead(400, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ error: 'Missing required fields' }));
-        return;
-      }
-
-      // Ensure collections exist
-      if (!dbData.ACCOUNT) dbData.ACCOUNT = [];
-      if (!dbData.MEMBER_PROFILE) dbData.MEMBER_PROFILE = [];
-
-      // Check if username or email already exists
-      const exists = dbData.ACCOUNT.some(
-        acc => acc.username === username || acc.email === email
-      );
-      if (exists) {
-        res.writeHead(400, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ error: 'Username or Email already exists' }));
-        return;
-      }
-
-      // 2. Generate IDs
-      const nextAccountId = generateNextId(dbData.ACCOUNT, 'acc_', 'accountId');
-      const nextMemberProfileId = generateNextId(dbData.MEMBER_PROFILE, 'mem_prof_', 'memberId');
-
-      // 3. Create Account record
-      const now = new Date().toISOString();
-      const newAccount = {
-        id: nextAccountId,
-        accountId: nextAccountId,
-        username,
-        passwordHash: passwordHash || password,
-        fullName,
-        email,
-        phoneNumber,
-        dateOfBirth: body.dateOfBirth || null,
-        gender: body.gender || null,
-        identityCard: body.identityCard || null,
-        address: body.address || null,
-        avatarUrl: body.avatarUrl || null,
-        role: body.role || 'MEMBER',
-        status: body.status || 'ACTIVE',
-        createdAt: now,
-        updatedAt: now,
-        lastLoginAt: now
-      };
-
-      // 4. Create Member Profile record (if role is MEMBER)
-      let newProfile = null;
-      if (newAccount.role === 'MEMBER') {
-        newProfile = {
-          id: nextMemberProfileId,
-          memberId: nextMemberProfileId,
-          accountId: nextAccountId,
-          points: 0,
-          tier: 'STANDARD',
-          favoriteGenres: body.favoriteGenres || [],
-          joinedAt: now
-        };
-      }
-
-      // Save records to arrays
-      dbData.ACCOUNT.push(newAccount);
-      if (newProfile) {
-        dbData.MEMBER_PROFILE.push(newProfile);
-      }
-
-      // 5. Write back to LowDB
-      await dbInstance.write();
-
-      res.writeHead(201, { 'Content-Type': 'application/json' });
-      res.end(JSON.stringify({
-        message: 'Registration successful',
-        account: newAccount,
-        memberProfile: newProfile
-      }));
-    } catch (err) {
-      res.writeHead(400, { 'Content-Type': 'application/json' });
-      res.end(JSON.stringify({ error: 'Registration failed', details: err.message }));
-    }
+  if (pathname === '/api-docs') {
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/html; charset=utf-8');
+    res.end(buildSwaggerHtml());
     return;
   }
 
-  // Tất cả routes còn lại → json-server
-  const app = await getApp();
-  app.handler(req, res);
+  if (pathname === '/register') {
+    if (req.method !== 'POST') return sendJson(res, 405, { error: 'Method Not Allowed' });
+    await register(req, res);
+    return;
+  }
+
+  const segments = pathname.split('/').filter(Boolean).map(decodeURIComponent);
+  const resource = segments[0];
+  const id = segments[1];
+  if (!resource || !Object.hasOwn(database, resource) || segments.length > 2) {
+    sendJson(res, 404, { error: 'Not Found' });
+    return;
+  }
+
+  await handleResource(req, res, resource, id, url);
 }

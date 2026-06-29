@@ -3,7 +3,13 @@
   "builds": [
     {
       "src": "api/index.mjs",
-      "use": "@vercel/node"
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": [
+          "db.json",
+          "swagger.json"
+        ]
+      }
     }
   ],
   "routes": [
