@@ -9880,13 +9880,13 @@
       "id": "sh_st_00384"
     },
     {
+      "id": "sh_st_00385",
       "showtimeSeatId": "sh_st_00385",
       "showtimeId": "show_017",
       "seatId": "seat_0073",
       "seatType": "STANDARD",
-      "status": "AVAILABLE",
-      "price": 120000,
-      "id": "sh_st_00385"
+      "status": "BOOKED",
+      "price": 120000
     },
     {
       "showtimeSeatId": "sh_st_00386",
@@ -19686,7 +19686,44 @@
       "id": "promo_020"
     }
   ],
-  "BOOKING": [],
-  "BOOKING_SEAT": [],
-  "TICKET": []
+  "BOOKING": [
+    {
+      "bookingId": "BK-8271",
+      "bookingCode": "BK-8271",
+      "accountId": "acc_006",
+      "showtimeId": "show_017",
+      "subtotalAmount": 120000,
+      "discountAmount": 0,
+      "pointsUsed": 0,
+      "pointsEarned": 12000,
+      "totalAmount": 120000,
+      "paymentMethod": "CASH",
+      "paymentStatus": "PAID",
+      "bookingStatus": "CONFIRMED",
+      "createdAt": "2026-07-06T11:53:41Z",
+      "updatedAt": "2026-07-06T11:53:41Z",
+      "id": "j8NOjThxVxI"
+    }
+  ],
+  "BOOKING_SEAT": [
+    {
+      "bookingSeatId": "bk_st_a640fae5-93cb-43eb-8b89-b7a89a5ee855",
+      "bookingId": "BK-8271",
+      "showtimeSeatId": "sh_st_00385",
+      "price": 120000,
+      "id": "5o_zWfwiWAg"
+    }
+  ],
+  "TICKET": [
+    {
+      "ticketId": "66a9995c-0f61-424b-9e76-16b65886809f",
+      "bookingId": "BK-8271",
+      "bookingSeatId": "bk_st_a640fae5-93cb-43eb-8b89-b7a89a5ee855",
+      "ticketCode": "QR-BK-8271-1",
+      "issuedAt": "2026-07-06T11:53:41Z",
+      "isUsed": false,
+      "id": "Ozk9-pDkrkA"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
