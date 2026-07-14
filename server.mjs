@@ -73,10 +73,31 @@ const server = http.createServer((req, res) => {
 
     parseBody(req)
       .then(body => {
-        const { username, password, passwordHash, fullName, email, phoneNumber } = body;
+        const {
+          username,
+          password,
+          passwordHash,
+          fullName,
+          email,
+          phoneNumber,
+          dateOfBirth,
+          gender,
+          identityCard,
+          address
+        } = body;
         
         // 1. Simple validation
-        if (!username || (!password && !passwordHash) || !fullName || !email || !phoneNumber) {
+        if (
+          !username ||
+          (!password && !passwordHash) ||
+          !fullName ||
+          !email ||
+          !phoneNumber ||
+          !dateOfBirth ||
+          !gender ||
+          !identityCard ||
+          !address
+        ) {
           res.writeHead(400, { 'Content-Type': 'application/json' });
           res.end(JSON.stringify({ error: 'Missing required fields' }));
           return;
@@ -97,13 +118,17 @@ const server = http.createServer((req, res) => {
         if (!dbData.ACCOUNT) dbData.ACCOUNT = [];
         if (!dbData.MEMBER_PROFILE) dbData.MEMBER_PROFILE = [];
 
-        // Check if username or email already exists
-        const exists = dbData.ACCOUNT.some(
-          acc => acc.username === username || acc.email === email
+        // Check if username, email, phone number, or identity card already exists
+        const duplicateField = dbData.ACCOUNT.find(
+          acc =>
+            acc.username.toLowerCase() === username.toLowerCase() ||
+            acc.email.toLowerCase() === email.toLowerCase() ||
+            acc.phoneNumber === phoneNumber ||
+            acc.identityCard === identityCard
         );
-        if (exists) {
-          res.writeHead(400, { 'Content-Type': 'application/json' });
-          res.end(JSON.stringify({ error: 'Username or Email already exists' }));
+        if (duplicateField) {
+          res.writeHead(409, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ error: 'Username, email, phone number or identity card already exists' }));
           return;
         }
 
@@ -121,13 +146,13 @@ const server = http.createServer((req, res) => {
           fullName,
           email,
           phoneNumber,
-          dateOfBirth: body.dateOfBirth || null,
-          gender: body.gender || null,
-          identityCard: body.identityCard || null,
-          address: body.address || null,
+          dateOfBirth,
+          gender,
+          identityCard,
+          address,
           avatarUrl: body.avatarUrl || null,
-          role: body.role || 'MEMBER',
-          status: body.status || 'ACTIVE',
+          role: 'MEMBER',
+          status: 'ACTIVE',
           createdAt: now,
           updatedAt: now,
           lastLoginAt: now

@@ -100,12 +100,71 @@ test('register creates both account and member profile', async () => {
       fullName: 'Vercel Test',
       email: 'vercel-test@example.com',
       phoneNumber: '0900000000',
+      dateOfBirth: '2000-01-01',
+      gender: 'Male',
+      identityCard: '1234567890',
+      address: '123 Test Street',
+      role: 'ADMIN',
+      status: 'LOCKED',
     }),
   });
   assert.equal(registerResponse.status, 201);
   const result = await registerResponse.json();
   assert.equal(result.account.role, 'MEMBER');
+  assert.equal(result.account.status, 'ACTIVE');
   assert.equal(result.memberProfile.accountId, result.account.accountId);
+});
+
+test('register rejects missing address and duplicate phone or identity card', async () => {
+  const missingAddressResponse = await fetch(`${baseUrl}/register`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      username: 'missing_address_member',
+      password: 'secret123',
+      fullName: 'Missing Address',
+      email: 'missing-address@example.com',
+      phoneNumber: '0911111111',
+      dateOfBirth: '2000-01-01',
+      gender: 'Male',
+      identityCard: '1234567891',
+    }),
+  });
+  assert.equal(missingAddressResponse.status, 400);
+
+  const duplicatePhoneResponse = await fetch(`${baseUrl}/register`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      username: 'duplicate_phone_member',
+      password: 'secret123',
+      fullName: 'Duplicate Phone',
+      email: 'duplicate-phone@example.com',
+      phoneNumber: '0900000000',
+      dateOfBirth: '2000-01-01',
+      gender: 'Male',
+      identityCard: '1234567892',
+      address: '456 Test Street',
+    }),
+  });
+  assert.equal(duplicatePhoneResponse.status, 409);
+
+  const duplicateIdentityCardResponse = await fetch(`${baseUrl}/register`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      username: 'duplicate_identity_member',
+      password: 'secret123',
+      fullName: 'Duplicate Identity',
+      email: 'duplicate-identity@example.com',
+      phoneNumber: '0922222222',
+      dateOfBirth: '2000-01-01',
+      gender: 'Male',
+      identityCard: '1234567890',
+      address: '789 Test Street',
+    }),
+  });
+  assert.equal(duplicateIdentityCardResponse.status, 409);
 });
 
 test('serves Swagger and CORS preflight', async () => {

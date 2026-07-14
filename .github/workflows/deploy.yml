@@ -1,0 +1,19 @@
+name: Deploy to Coolify
+
+on:
+  push:
+    branches:
+      - main   # Trigger on every push to main
+
+jobs:
+  deploy:
+    name: Trigger Coolify Webhook
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Ping Coolify Webhook
+        run: |
+          curl --fail-with-body \
+            --request GET \
+            --url "${{ secrets.COOLIFY_WEBHOOK_URL }}" \
+            --header "Authorization: Bearer ${{ secrets.COOLIFY_TOKEN }}"

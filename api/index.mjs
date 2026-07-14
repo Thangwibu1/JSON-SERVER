@@ -30,6 +30,7 @@ const idFields = {
   BOOKING: 'bookingId',
   BOOKING_SEAT: 'bookingSeatId',
   TICKET: 'ticketId',
+  POINT_HISTORY: 'pointHistoryId',
 };
 
 const idPrefixes = {
@@ -44,6 +45,7 @@ const idPrefixes = {
   BOOKING: 'bk_',
   BOOKING_SEAT: 'bk_st_',
   TICKET: 'tk_',
+  POINT_HISTORY: 'point_',
 };
 
 function setCors(res) {
@@ -169,17 +171,45 @@ async function register(req, res) {
     return;
   }
 
-  const { username, password, passwordHash, fullName, email, phoneNumber } = body;
-  if (!username || (!password && !passwordHash) || !fullName || !email || !phoneNumber) {
+  const {
+    username,
+    password,
+    passwordHash,
+    fullName,
+    email,
+    phoneNumber,
+    dateOfBirth,
+    gender,
+    identityCard,
+    address,
+  } = body;
+
+  if (
+    !username ||
+    (!password && !passwordHash) ||
+    !fullName ||
+    !email ||
+    !phoneNumber ||
+    !dateOfBirth ||
+    !gender ||
+    !identityCard ||
+    !address
+  ) {
     sendJson(res, 400, { error: 'Missing required fields' });
     return;
   }
 
-  const duplicate = database.ACCOUNT.some(
-    (account) => account.username === username || account.email === email
+  const duplicateField = database.ACCOUNT.find(
+    (account) =>
+      account.username.toLowerCase() === username.toLowerCase() ||
+      account.email.toLowerCase() === email.toLowerCase() ||
+      account.phoneNumber === phoneNumber ||
+      account.identityCard === identityCard
   );
-  if (duplicate) {
-    sendJson(res, 409, { error: 'Username or Email already exists' });
+  if (duplicateField) {
+    sendJson(res, 409, {
+      error: 'Username, email, phone number or identity card already exists',
+    });
     return;
   }
 
@@ -193,13 +223,13 @@ async function register(req, res) {
     fullName,
     email,
     phoneNumber,
-    dateOfBirth: body.dateOfBirth || null,
-    gender: body.gender || null,
-    identityCard: body.identityCard || null,
-    address: body.address || null,
+    dateOfBirth,
+    gender,
+    identityCard,
+    address,
     avatarUrl: body.avatarUrl || null,
-    role: body.role || 'MEMBER',
-    status: body.status || 'ACTIVE',
+    role: 'MEMBER',
+    status: 'ACTIVE',
     createdAt: now,
     updatedAt: now,
     lastLoginAt: now,

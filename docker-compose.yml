@@ -1,0 +1,21 @@
+services:
+  movie-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: movie-theater-api
+    restart: unless-stopped
+    ports:
+      - "3030:3030"
+    environment:
+      - PORT=3030
+      - NODE_ENV=production
+    volumes:
+      # Persist db.json on the host so data survives container restarts/updates
+      - ./db.json:/app/db.json
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:3030/MOVIE"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
